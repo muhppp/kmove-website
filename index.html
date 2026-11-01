@@ -1,0 +1,1991 @@
+<!DOCTYPE html>
+<html lang="th" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>บริษัท เคมูฟว์ จำกัด (K-MOVE) | บริการให้เช่ารถเครนและตู้สำนักงานเคลื่อนที่ เชียงใหม่</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Prompt & Sarabun -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Prompt', 'Sarabun', 'sans-serif'],
+                        body: ['Sarabun', 'Prompt', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            navy: '#0F172A',
+                            slate: '#1E293B',
+                            red: '#DC2626',
+                            redDark: '#B91C1C',
+                            light: '#F8FAFC',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="min-h-screen flex flex-col selection:bg-brand-red selection:text-white">
+
+    <!-- Top Corporate Information Bar (PCC Group Style) -->
+    <div class="bg-brand-navy text-slate-300 text-xs py-2.5 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap justify-between items-center gap-2">
+            <div class="flex items-center space-x-4">
+                <span class="inline-flex items-center gap-1.5 text-white font-medium">
+                    <span class="w-2 h-2 rounded-full bg-brand-red"></span>
+                    กลุ่มบริษัทในเครือพิบูลย์คอนกรีต (PCC Group)
+                </span>
+                <span class="hidden md:inline text-slate-600">|</span>
+                <span class="hidden md:inline-flex items-center gap-1 text-slate-300">
+                    <i data-lucide="map-pin" class="w-3.5 h-3.5 text-brand-red"></i>
+                    48 ต.ฟ้าฮ่าม อ.เมือง จ.เชียงใหม่
+                </span>
+            </div>
+            <div class="flex items-center space-x-4 ml-auto">
+                <a href="tel:053240500" class="hover:text-white transition flex items-center gap-1">
+                    <i data-lucide="phone" class="w-3.5 h-3.5 text-brand-red"></i>
+                    <span>สำนักงาน: 053-240500</span>
+                </a>
+                <span class="text-slate-600">|</span>
+                <a href="tel:0851555331" class="hover:text-white transition flex items-center gap-1 font-medium text-white">
+                    <i data-lucide="phone-call" class="w-3.5 h-3.5 text-brand-red"></i>
+                    <span>ฝ่ายขาย: 085-1555331, 085-1115626</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Sticky Navigation Header -->
+    <header class="bg-white/95 backdrop-blur-md sticky top-0 z-50 border-b border-slate-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Brand Logo -->
+                <button onclick="switchTab('home')" class="flex items-center gap-3 text-left group focus:outline-none">
+                    <div class="flex items-center justify-center w-12 h-12 rounded-xl bg-brand-navy text-white font-bold text-2xl tracking-tighter shadow-sm group-hover:bg-slate-800 transition relative overflow-hidden">
+                        <span class="text-brand-red font-extrabold text-3xl italic pr-0.5">K</span>
+                        <span class="text-xs font-semibold tracking-widest uppercase absolute bottom-1 right-1.5 text-slate-300">MOVE</span>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-2">
+                            <span class="text-xl font-bold tracking-tight text-brand-navy">บริษัท เคมูฟว์ จำกัด</span>
+                        </div>
+                        <p class="text-xs text-slate-500 font-normal">K-MOVE CO., LTD. • รถเครนและตู้สำนักงานให้เช่า</p>
+                    </div>
+                </button>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden lg:flex items-center space-x-1">
+                    <button onclick="switchTab('home')" data-tab="home" class="nav-btn px-3 py-2 rounded-lg text-sm font-medium transition-colors text-brand-red bg-red-50/80">
+                        หน้าแรก
+                    </button>
+                    <button onclick="switchTab('about')" data-tab="about" class="nav-btn px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-brand-navy hover:bg-slate-100 transition-colors">
+                        เกี่ยวกับเรา
+                    </button>
+                    <button onclick="switchTab('services')" data-tab="services" class="nav-btn px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-brand-navy hover:bg-slate-100 transition-colors">
+                        สินค้าและบริการ
+                    </button>
+                    <button onclick="switchTab('loadchart')" data-tab="loadchart" class="nav-btn px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-brand-navy hover:bg-slate-100 transition-colors">
+                        การอ่าน Load Chart
+                    </button>
+                    <button onclick="switchTab('manuals')" data-tab="manuals" class="nav-btn px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-brand-navy hover:bg-slate-100 transition-colors flex items-center gap-1.5">
+                        <span>คู่มือรถเครน</span>
+                        <span class="px-1.5 py-0.5 text-[10px] font-bold bg-brand-navy text-white rounded">88</span>
+                    </button>
+                    <button onclick="switchTab('articles')" data-tab="articles" class="nav-btn px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-brand-navy hover:bg-slate-100 transition-colors">
+                        บทความน่ารู้
+                    </button>
+                    <button onclick="switchTab('contact')" data-tab="contact" class="nav-btn px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-brand-navy hover:bg-slate-100 transition-colors">
+                        ติดต่อเรา
+                    </button>
+                </nav>
+
+                <!-- CTA Button Desktop -->
+                <div class="hidden lg:flex items-center gap-3">
+                    <button onclick="switchTab('contact')" class="bg-brand-navy hover:bg-slate-800 text-white text-sm font-medium px-4 py-2.5 rounded-lg transition shadow-sm flex items-center gap-2">
+                        <i data-lucide="calendar-check" class="w-4 h-4 text-brand-red"></i>
+                        <span>ติดต่อเช่าเครน / ประเมินหน้างาน</span>
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="lg:hidden">
+                    <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="p-2.5 rounded-lg text-slate-600 hover:text-brand-navy hover:bg-slate-100 focus:outline-none">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-200 px-4 pt-2 pb-4 space-y-1 shadow-lg">
+            <button onclick="switchTab('home'); toggleMobileMenu()" data-tab="home" class="mobile-nav-btn w-full text-left px-4 py-2.5 rounded-lg text-sm font-medium text-brand-red bg-red-50">หน้าแรก</button>
+            <button onclick="switchTab('about'); toggleMobileMenu()" data-tab="about" class="mobile-nav-btn w-full text-left px-4 py-2.5 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-100">เกี่ยวกับเรา</button>
+            <button onclick="switchTab('services'); toggleMobileMenu()" data-tab="services" class="mobile-nav-btn w-full text-left px-4 py-2.5 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-100">สินค้าและบริการ</button>
+            <button onclick="switchTab('loadchart'); toggleMobileMenu()" data-tab="loadchart" class="mobile-nav-btn w-full text-left px-4 py-2.5 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-100">การอ่าน Load Chart</button>
+            <button onclick="switchTab('manuals'); toggleMobileMenu()" data-tab="manuals" class="mobile-nav-btn w-full text-left px-4 py-2.5 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-100 flex items-center justify-between">
+                <span>คู่มือรถเครน (Crane Manuals)</span>
+                <span class="px-2 py-0.5 text-xs font-bold bg-brand-navy text-white rounded-full">88 ไฟล์</span>
+            </button>
+            <button onclick="switchTab('articles'); toggleMobileMenu()" data-tab="articles" class="mobile-nav-btn w-full text-left px-4 py-2.5 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-100">บทความน่ารู้</button>
+            <button onclick="switchTab('contact'); toggleMobileMenu()" data-tab="contact" class="mobile-nav-btn w-full text-left px-4 py-2.5 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-100">ติดต่อเรา</button>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT CONTAINER -->
+    <main class="flex-grow">
+
+        <!-- ==========================================
+             TAB 1: หน้าแรก (HOME)
+             ========================================== -->
+        <section id="tab-home" class="tab-content active">
+            <!-- Hero Banner -->
+            <div class="relative bg-brand-navy text-white overflow-hidden">
+                <!-- Subtle architectural grid background -->
+                <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#94A3B8 1px, transparent 1px); background-size: 24px 24px;"></div>
+                <div class="absolute right-0 top-0 bottom-0 w-1/2 bg-gradient-to-l from-red-900/20 to-transparent pointer-events-none"></div>
+                
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 relative z-10">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                        <div class="lg:col-span-7 space-y-6">
+                            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-800/90 border border-slate-700 text-xs font-medium text-slate-300">
+                                <span class="w-2 h-2 rounded-full bg-brand-red"></span>
+                                <span>มาตรฐานวิศวกรรมและความปลอดภัย ในเครือพิบูลย์คอนกรีต</span>
+                            </div>
+                            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-tight">
+                                บริการให้เช่ารถเครนเคลื่อนที่ <br>
+                                <span class="text-slate-300 font-normal">และตู้สำนักงานเคลื่อนที่ครบวงจร</span>
+                            </h1>
+                            <p class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl text-body">
+                                บริษัท เคมูฟว์ จำกัด ให้บริการเช่ารถเครนขนาด 10 – 30 ตัน ทั้งรายวันและรายเดือน และตู้คอนเทนเนอร์สำนักงานเคลื่อนที่ ในจังหวัดเชียงใหม่และจังหวัดใกล้เคียง พร้อมทีมประเมินหน้างานและหน่วยซ่อมบำรุงเคลื่อนที่เร็ว (Mobile Service)
+                            </p>
+                            <div class="flex flex-wrap gap-4 pt-2">
+                                <button onclick="switchTab('services')" class="bg-brand-red hover:bg-brand-redDark text-white font-medium px-6 py-3.5 rounded-lg transition shadow-sm flex items-center gap-2">
+                                    <span>ดูสินค้าและบริการ</span>
+                                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                                </button>
+                                <button onclick="switchTab('contact')" class="bg-slate-800 hover:bg-slate-700 text-white border border-slate-700 font-medium px-6 py-3.5 rounded-lg transition flex items-center gap-2">
+                                    <i data-lucide="phone-call" class="w-4 h-4 text-brand-red"></i>
+                                    <span>ติดต่อฝ่ายขาย: 085-1555331</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Right Visual Crane Specification Card -->
+                        <div class="lg:col-span-5">
+                            <div class="bg-slate-800/70 backdrop-blur-md border border-slate-700/80 rounded-2xl p-6 sm:p-8 shadow-xl">
+                                <div class="flex items-center justify-between border-b border-slate-700 pb-4 mb-6">
+                                    <div>
+                                        <span class="text-xs uppercase tracking-wider text-slate-400">K-MOVE FLEET SPECIFICATION</span>
+                                        <h3 class="text-lg font-semibold text-white mt-0.5">ขนาดรถเครนที่พร้อมให้บริการ</h3>
+                                    </div>
+                                    <div class="w-10 h-10 rounded-lg bg-brand-red/20 border border-brand-red/40 flex items-center justify-center text-brand-red">
+                                        <i data-lucide="truck" class="w-5 h-5"></i>
+                                    </div>
+                                </div>
+
+                                <div class="grid grid-cols-5 gap-2 mb-6">
+                                    <div class="bg-slate-900/90 border border-slate-700/80 rounded-xl p-3 text-center">
+                                        <span class="block text-xl font-bold text-white">10</span>
+                                        <span class="text-[11px] text-slate-400">ตัน</span>
+                                    </div>
+                                    <div class="bg-slate-900/90 border border-slate-700/80 rounded-xl p-3 text-center">
+                                        <span class="block text-xl font-bold text-white">16</span>
+                                        <span class="text-[11px] text-slate-400">ตัน</span>
+                                    </div>
+                                    <div class="bg-slate-900/90 border border-slate-700/80 rounded-xl p-3 text-center">
+                                        <span class="block text-xl font-bold text-white">20</span>
+                                        <span class="text-[11px] text-slate-400">ตัน</span>
+                                    </div>
+                                    <div class="bg-slate-900/90 border border-slate-700/80 rounded-xl p-3 text-center">
+                                        <span class="block text-xl font-bold text-white">25</span>
+                                        <span class="text-[11px] text-slate-400">ตัน</span>
+                                    </div>
+                                    <div class="bg-brand-red/20 border border-brand-red/50 rounded-xl p-3 text-center">
+                                        <span class="block text-xl font-bold text-white">30</span>
+                                        <span class="text-[11px] text-red-200">ตัน</span>
+                                    </div>
+                                </div>
+
+                                <ul class="space-y-3 text-sm text-slate-300 mb-6">
+                                    <li class="flex items-start gap-2.5">
+                                        <i data-lucide="check-circle-2" class="w-4 h-4 text-brand-red shrink-0 mt-0.5"></i>
+                                        <span>บริการเช่าทั้งแบบ <strong>รายวัน</strong> และ <strong>รายเดือน</strong> รวม 24 คัน</span>
+                                    </li>
+                                    <li class="flex items-start gap-2.5">
+                                        <i data-lucide="check-circle-2" class="w-4 h-4 text-brand-red shrink-0 mt-0.5"></i>
+                                        <span>ตู้คอนเทนเนอร์สำนักงานเคลื่อนที่ ขนาดมาตรฐาน <strong>3 x 6 เมตร</strong></span>
+                                    </li>
+                                    <li class="flex items-start gap-2.5">
+                                        <i data-lucide="check-circle-2" class="w-4 h-4 text-brand-red shrink-0 mt-0.5"></i>
+                                        <span>ใช้ลวดสลิงมาตรฐานสูง <strong>6x36WS Grade 1770 N/mm² ไส้เหล็ก IWRC</strong></span>
+                                    </li>
+                                </ul>
+
+                                <div class="bg-slate-900/80 rounded-xl p-4 flex items-center justify-between border border-slate-700/60">
+                                    <div class="text-xs text-slate-300">
+                                        <span class="block font-medium text-white">ต้องการดูสเปคและตาราง Load Chart รายรุ่น?</span>
+                                        <span>ค้นหาและดาวน์โหลดคู่มือรถเครน 88 รุ่น (PDF)</span>
+                                    </div>
+                                    <button onclick="switchTab('manuals')" class="px-3 py-1.5 rounded-lg bg-brand-red hover:bg-brand-redDark text-xs font-medium text-white transition shrink-0">
+                                        คลังคู่มือ 88 รุ่น
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Key Corporate Figures Bar -->
+            <div class="bg-white border-b border-slate-200">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+                    <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:divide-x divide-slate-200">
+                        <div class="px-4">
+                            <p class="text-xs font-medium uppercase tracking-wider text-slate-400">ก่อตั้งบริษัท</p>
+                            <p class="text-2xl sm:text-3xl font-bold text-brand-navy mt-1">พ.ศ. 2550</p>
+                            <p class="text-xs text-slate-500 mt-1">ประสบการณ์ยาวนานกว่า 19 ปี</p>
+                        </div>
+                        <div class="px-4">
+                            <p class="text-xs font-medium uppercase tracking-wider text-slate-400">จำนวนรถเครนบริการ</p>
+                            <p class="text-2xl sm:text-3xl font-bold text-brand-navy mt-1">24 คัน</p>
+                            <p class="text-xs text-slate-500 mt-1">ขนาดตั้งแต่ 10, 16, 20, 25 และ 30 ตัน</p>
+                        </div>
+                        <div class="px-4">
+                            <p class="text-xs font-medium uppercase tracking-wider text-slate-400">บุคลากรมืออาชีพ</p>
+                            <p class="text-2xl sm:text-3xl font-bold text-brand-navy mt-1">~50 คน</p>
+                            <p class="text-xs text-slate-500 mt-1">ผ่านการอบรมผู้บังคับปั้นจั่นตามกฎหมาย</p>
+                        </div>
+                        <div class="px-4">
+                            <p class="text-xs font-medium uppercase tracking-wider text-slate-400">บริการซ่อมฉุกเฉิน</p>
+                            <p class="text-2xl sm:text-3xl font-bold text-brand-red mt-1">Mobile Service</p>
+                            <p class="text-xs text-slate-500 mt-1">ดูแลรวดเร็วนอกสถานที่ รับผิดชอบงาน</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Core Services Overview Section -->
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                    <div>
+                        <span class="text-xs font-semibold uppercase tracking-widest text-brand-red">OUR CORE SERVICES</span>
+                        <h2 class="text-2xl sm:text-3xl font-bold text-brand-navy mt-1">สินค้าและบริการหลักของเรา</h2>
+                    </div>
+                    <p class="text-slate-600 text-sm max-w-md mt-2 md:mt-0 text-body">
+                        ตอบสนองความต้องการของลูกค้าผู้รับเหมางานก่อสร้างทั่วไป และงานอุตสาหกรรม ในจังหวัดเชียงใหม่และจังหวัดใกล้เคียง
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Service Card 1 -->
+                    <div class="bg-white rounded-2xl border border-slate-200 p-7 shadow-sm hover:shadow-md transition flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-slate-100 text-brand-navy flex items-center justify-center mb-5">
+                                <i data-lucide="construction" class="w-6 h-6 text-brand-red"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-brand-navy mb-2">บริการเช่ารถเครนเคลื่อนที่</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-4 text-body">
+                                บริการรถเครนให้เช่าทั้งรายวันและรายเดือน จำนวน 24 คัน มีขนาด 10 ตัน, 16 ตัน, 20 ตัน, 25 ตัน และ 30 ตัน รองรับงานเทคอนกรีต ยกโครงสร้างเหล็ก ยกเครื่องจักร และงานก่อสร้างทุกชนิด
+                            </p>
+                        </div>
+                        <button onclick="switchTab('services')" class="inline-flex items-center gap-1.5 text-sm font-medium text-brand-red hover:text-brand-redDark mt-4">
+                            <span>ดูตัวอย่างงานบริการทั้งหมด</span>
+                            <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+
+                    <!-- Service Card 2 -->
+                    <div class="bg-white rounded-2xl border border-slate-200 p-7 shadow-sm hover:shadow-md transition flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-slate-100 text-brand-navy flex items-center justify-center mb-5">
+                                <i data-lucide="building-2" class="w-6 h-6 text-brand-red"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-brand-navy mb-2">ตู้คอนเทนเนอร์สำนักงานเคลื่อนที่</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-4 text-body">
+                                บริการให้เช่าตู้สำนักงานเคลื่อนที่ (Mobile Office Container) ขนาดมาตรฐาน 3 x 6 เมตร แข็งแรง สะดวกต่อการติดตั้งหน้างานก่อสร้าง พร้อมบริการขนส่งและยกติดตั้งถึงโครงการ
+                            </p>
+                        </div>
+                        <button onclick="switchTab('services')" class="inline-flex items-center gap-1.5 text-sm font-medium text-brand-red hover:text-brand-redDark mt-4">
+                            <span>รายละเอียดเพิ่มเติม</span>
+                            <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+
+                    <!-- Service Card 3 -->
+                    <div class="bg-white rounded-2xl border border-slate-200 p-7 shadow-sm hover:shadow-md transition flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-slate-100 text-brand-navy flex items-center justify-center mb-5">
+                                <i data-lucide="shield-check" class="w-6 h-6 text-brand-red"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-brand-navy mb-2">ประเมินหน้างาน & Mobile Service</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-4 text-body">
+                                มีทีมงานขายและเทคนิคให้คำปรึกษาดูหน้างานฟรี เพื่อเลือกขนาดเครนที่คุ้มค่าและปลอดภัย พร้อมทีมช่างซ่อมบำรุงเคลื่อนที่เร็วเมื่อเกิดเหตุฉุกเฉิน ไม่ให้งานของลูกค้าสะดุด
+                            </p>
+                        </div>
+                        <button onclick="switchTab('about')" class="inline-flex items-center gap-1.5 text-sm font-medium text-brand-red hover:text-brand-redDark mt-4">
+                            <span>ดูโครงสร้างทีมบริหารงาน</span>
+                            <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Highlights of Knowledge & Standards -->
+            <div class="bg-slate-100 border-y border-slate-200 py-16">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                        <div class="lg:col-span-5 space-y-4">
+                            <span class="text-xs font-semibold uppercase tracking-widest text-brand-red">SAFETY & ENGINEERING STANDARD</span>
+                            <h2 class="text-2xl sm:text-3xl font-bold text-brand-navy">มาตรฐานความปลอดภัยและคลังความรู้ด้านงานยก</h2>
+                            <p class="text-slate-600 text-sm leading-relaxed text-body">
+                                บริษัท เคมูฟว์ จำกัด ปฏิบัติตามกฎหมายความปลอดภัยเกี่ยวกับปั้นจั่นอย่างเคร่งครัด เลือกใช้อุปกรณ์การยก ลวดสลิง สเก็น และสลิงอ่อนที่ได้มาตรฐานสากล เพื่อป้องกันอุบัติเหตุและความเสียหายต่อทรัพย์สินของลูกค้า
+                            </p>
+                            <div class="pt-2 flex flex-wrap gap-3">
+                                <button onclick="switchTab('loadchart')" class="bg-brand-navy hover:bg-slate-800 text-white text-sm font-medium px-5 py-2.5 rounded-lg transition">
+                                    วิธีอ่านตาราง Load Chart
+                                </button>
+                                <button onclick="switchTab('manuals')" class="bg-brand-red hover:bg-brand-redDark text-white text-sm font-medium px-5 py-2.5 rounded-lg transition flex items-center gap-1.5">
+                                    <i data-lucide="folder-open" class="w-4 h-4"></i>
+                                    <span>คลังคู่มือรถเครน (88 PDF)</span>
+                                </button>
+                                <button onclick="switchTab('articles')" class="bg-white hover:bg-slate-50 text-brand-navy border border-slate-300 text-sm font-medium px-5 py-2.5 rounded-lg transition">
+                                    บทความน่ารู้เรื่องสลิงและสเก็น
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div onclick="switchTab('articles')" class="cursor-pointer bg-white p-5 rounded-xl border border-slate-200 hover:border-slate-300 transition">
+                                <div class="flex items-center gap-3 mb-2">
+                                    <span class="w-8 h-8 rounded-lg bg-red-50 text-brand-red font-bold text-sm flex items-center justify-center">01</span>
+                                    <h4 class="font-semibold text-brand-navy text-sm">กฎหมายเกี่ยวกับการใช้รถเครน</h4>
+                                </div>
+                                <p class="text-xs text-slate-500 text-body">มาตรฐานความปลอดภัย พ.ศ. 2552, การใช้สัญญาณมือ, การทดสอบปั้นจั่น และข้อบังคับสภาวิศวกร</p>
+                            </div>
+                            <div onclick="switchTab('articles')" class="cursor-pointer bg-white p-5 rounded-xl border border-slate-200 hover:border-slate-300 transition">
+                                <div class="flex items-center gap-3 mb-2">
+                                    <span class="w-8 h-8 rounded-lg bg-red-50 text-brand-red font-bold text-sm flex items-center justify-center">02</span>
+                                    <h4 class="font-semibold text-brand-navy text-sm">ลวดสลิง 6x36WS ไส้เหล็ก IWRC</h4>
+                                </div>
+                                <p class="text-xs text-slate-500 text-body">การเลือกใช้ลวดสลิง Grade 1770 N/mm² และสลิงผูกมัดแบบ SSE Eye & Eye ให้เหมาะกับขนาดเครน</p>
+                            </div>
+                            <div onclick="switchTab('articles')" class="cursor-pointer bg-white p-5 rounded-xl border border-slate-200 hover:border-slate-300 transition">
+                                <div class="flex items-center gap-3 mb-2">
+                                    <span class="w-8 h-8 rounded-lg bg-red-50 text-brand-red font-bold text-sm flex items-center justify-center">03</span>
+                                    <h4 class="font-semibold text-brand-navy text-sm">การเลือกใช้สเก็น (Shackles)</h4>
+                                </div>
+                                <p class="text-xs text-slate-500 text-body">ความแตกต่างระหว่างสเก็นตัวยู (JIS) และสเก็นโอเมก้า (US) พร้อมตารางขนาดรับน้ำหนัก W.L.L.</p>
+                            </div>
+                            <div onclick="switchTab('articles')" class="cursor-pointer bg-white p-5 rounded-xl border border-slate-200 hover:border-slate-300 transition">
+                                <div class="flex items-center gap-3 mb-2">
+                                    <span class="w-8 h-8 rounded-lg bg-red-50 text-brand-red font-bold text-sm flex items-center justify-center">04</span>
+                                    <h4 class="font-semibold text-brand-navy text-sm">สลิงอ่อน (Soft / Webbing Sling)</h4>
+                                </div>
+                                <p class="text-xs text-slate-500 text-body">สลิงโพลีเอสเตอร์ 100% ถนอมผิวชิ้นงาน พร้อมตารางเทียบสีและน้ำหนักยกปลอดภัย (SF 7:1 / 6:1)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             TAB 2: เกี่ยวกับเรา (ABOUT US)
+             ========================================== -->
+        <section id="tab-about" class="tab-content">
+            <!-- Subpage Header -->
+            <div class="bg-brand-navy text-white py-12 border-b border-slate-800">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <span class="text-xs font-semibold uppercase tracking-widest text-brand-red">ABOUT K-MOVE CO., LTD.</span>
+                    <h1 class="text-3xl font-bold mt-1">เกี่ยวกับเรา</h1>
+                    <p class="text-slate-300 text-sm mt-2">ประวัติความเป็นมา การเติบโต และโครงสร้างการบริหารงานของ บริษัท เคมูฟว์ จำกัด</p>
+                </div>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-14">
+                <!-- Company Intro & History -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+                    <div class="lg:col-span-7 space-y-6">
+                        <div class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm space-y-5">
+                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-slate-100 text-brand-navy text-xs font-semibold">
+                                <i data-lucide="building" class="w-4 h-4 text-brand-red"></i>
+                                <span>แนะนำบริษัท เคมูฟว์ จำกัด</span>
+                            </div>
+                            <h2 class="text-2xl font-bold text-brand-navy">จุดเริ่มต้นจากความเชี่ยวชาญในเครือพิบูลย์คอนกรีต</h2>
+                            <div class="space-y-4 text-slate-700 leading-relaxed text-base text-body">
+                                <p>
+                                    <strong>บริษัท เคมูฟว์ จำกัด</strong> ตั้งอยู่เลขที่ 48 ตำบลฟ้าฮ่าม อำเภอเมือง จังหวัดเชียงใหม่ ก่อตั้งเมื่อปี <strong>พ.ศ. 2550</strong> โดย <strong>คุณพิบูลย์ อุดมสิทธิกุล</strong> ประธานบริหารกลุ่มบริษัทในเครือพิบูลย์คอนกรีต เป็นผู้ก่อตั้ง
+                                </p>
+                                <p>
+                                    <strong>ที่มาของบริษัท:</strong> ในช่วงปี พ.ศ. 2548 – 2550 บริษัท PCC Development จำกัด ซึ่งเป็นบริษัทในเครือพิบูลย์คอนกรีต จำกัด ได้รับเหมางานก่อสร้างอาคารโครงการบ้านเอื้ออาทรในจังหวัดเชียงใหม่หลายโครงการ อาทิ:
+                                </p>
+                                <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 bg-slate-50 p-4 rounded-xl border border-slate-200/80 text-sm font-sans">
+                                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-red"></span>โครงการบ้านเอื้ออาทรอาคารชุดหนองหอย</li>
+                                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-red"></span>โครงการบ้านเอื้ออาทรอาคารชุดไนท์ซาฟารี</li>
+                                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-red"></span>โครงการบ้านเอื้ออาทรอาคารชุดป่าตัน</li>
+                                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-red"></span>โครงการบ้านเอื้ออาทรอาคารชุดสันผีเสื้อ</li>
+                                    <li class="flex items-center gap-2 sm:col-span-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-red"></span>โครงการบ้านเอื้ออาทรบ้านเดี่ยวหนองหาร</li>
+                                </ul>
+                                <p>
+                                    ซึ่งในแต่ละโครงการเป็นโครงการอาคารที่ใช้ชิ้นส่วนโครงสร้างคอนกรีตสำเร็จรูป (Precast Concrete) เช่น เสา คาน ผนัง บันได และอื่นๆ โดยผลิตที่โรงงานพิบูลย์คอนกรีต ตั้งอยู่ที่ตำบลแม่แฝก อำเภอสันทราย จากนั้นจึงขนส่งชิ้นส่วนคอนกรีตสำเร็จรูปเหล่านั้นไปยังแต่ละโครงการ
+                                </p>
+                                <p>
+                                    การดำเนินงานในขั้นตอนการติดตั้งชิ้นส่วนคอนกรีตสำเร็จรูป ซึ่งเป็นชิ้นส่วนที่มีน้ำหนักมากไม่สามารถติดตั้งด้วยแรงงานคนได้ จึงมีความจำเป็นต้องใช้รถเครนในการติดตั้ง คุณพิบูลย์ อุดมสิทธิกุล จึงได้จัดซื้อรถเครนเข้ามาใช้งานจำนวนหลายคัน หลังจากเมื่อโครงการบ้านเอื้ออาทรแล้วเสร็จบางโครงการและชะลอตัวบางโครงการจากวิกฤตทางเศรษฐกิจในปี พ.ศ. 2550 คุณพิบูลย์ อุดมสิทธิกุล จึงได้รวบรวมรถเครนที่ใช้งานในแต่ละโครงการซึ่งมีประมาณ 10 คัน แล้วก่อตั้งบริษัทใหม่ชื่อว่า <strong>“บริษัท เคมูฟว์ จำกัด”</strong> เพื่อให้บริการเครนเช่ากับบริษัทในเครือพิบูลย์คอนกรีต และลูกค้าทั่วไปในจังหวัดเชียงใหม่และจังหวัดใกล้เคียง
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Timeline & Key Facts -->
+                    <div class="lg:col-span-5 space-y-6">
+                        <div class="bg-brand-navy text-white p-6 sm:p-8 rounded-2xl shadow-sm space-y-6">
+                            <h3 class="text-lg font-bold border-b border-slate-700 pb-3 flex items-center gap-2">
+                                <i data-lucide="trending-up" class="w-5 h-5 text-brand-red"></i>
+                                <span>พัฒนาการและการเติบโตของบริษัท</span>
+                            </h3>
+
+                            <div class="relative pl-6 border-l-2 border-slate-700 space-y-8">
+                                <div class="relative">
+                                    <span class="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-slate-700 border-2 border-brand-navy"></span>
+                                    <span class="text-xs font-semibold text-brand-red">พ.ศ. 2548 – 2550</span>
+                                    <h4 class="font-semibold text-white mt-0.5">ยุคบุกเบิกงานติดตั้ง Precast</h4>
+                                    <p class="text-xs text-slate-300 mt-1 text-body">สนับสนุนการติดตั้งชิ้นส่วนคอนกรีตสำเร็จรูปในโครงการบ้านเอื้ออาทรทั่วจังหวัดเชียงใหม่ ของเครือพิบูลย์คอนกรีต</p>
+                                </div>
+
+                                <div class="relative">
+                                    <span class="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-slate-400 border-2 border-brand-navy"></span>
+                                    <span class="text-xs font-semibold text-brand-red">พ.ศ. 2550 (เริ่มต้นก่อตั้ง)</span>
+                                    <h4 class="font-semibold text-white mt-0.5">ก่อตั้ง บริษัท เคมูฟว์ จำกัด</h4>
+                                    <p class="text-xs text-slate-300 mt-1 text-body">เริ่มต้นให้บริการเช่ารถเครนประมาณ 10 คัน ประกอบด้วยขนาด 10 ตัน, 16 ตัน, 20 ตัน และ 25 ตัน</p>
+                                </div>
+
+                                <div class="relative">
+                                    <span class="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-brand-red border-2 border-brand-navy"></span>
+                                    <span class="text-xs font-semibold text-brand-red">ปัจจุบัน</span>
+                                    <h4 class="font-semibold text-white mt-0.5">ขยายกองทัพรถเครนสู่ 24 คัน & ตู้สำนักงาน</h4>
+                                    <p class="text-xs text-slate-300 mt-1 text-body">ปรับเปลี่ยนรถเครนรุ่นใหม่เข้ามาทดแทนและเพิ่มเติม ปัจจุบันมีรถเครนให้เช่ารายวันและรายเดือน 24 คัน (ขนาด 10, 16, 20, 25 และ 30 ตัน) พร้อมบริการตู้คอนเทนเนอร์สำนักงานเคลื่อนที่ให้เช่า</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Company Location Summary Card -->
+                        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                            <div class="flex items-start gap-4">
+                                <div class="w-11 h-11 rounded-xl bg-slate-100 flex items-center justify-center shrink-0 text-brand-navy">
+                                    <i data-lucide="map-pin" class="w-5 h-5 text-brand-red"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-brand-navy">สถานที่ตั้งสำนักงานและศูนย์บริการ</h4>
+                                    <p class="text-sm text-slate-600 mt-1 text-body">เลขที่ 48 ตำบลฟ้าฮ่าม อำเภอเมือง จังหวัดเชียงใหม่ (พื้นที่เดียวกับกลุ่มบริษัทในเครือพิบูลย์คอนกรีต / พิบูลย์ทราย)</p>
+                                    <div class="mt-4 flex flex-wrap gap-3 text-xs">
+                                        <span class="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 font-medium">พนักงานรวมประมาณ 50 คน</span>
+                                        <span class="px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 font-medium">ยอดขายประมาณ 35 ล้านบาท/ปี</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Organization Chart & Management Structure -->
+                <div class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-10 shadow-sm">
+                    <div class="max-w-3xl mx-auto text-center mb-10">
+                        <span class="text-xs font-semibold uppercase tracking-widest text-brand-red">ORGANIZATION STRUCTURE</span>
+                        <h2 class="text-2xl sm:text-3xl font-bold text-brand-navy mt-1">โครงสร้างการบริหารงานของบริษัท เคมูฟว์ จำกัด</h2>
+                        <p class="text-slate-600 text-sm mt-2 text-body">
+                            เนื่องจากบริษัท เคมูฟว์ จำกัด มีพนักงานรวมกันทั้งพนักงานขาย พนักงานผู้บังคับเครน พนักงานผู้ยึดเกาะ ช่างซ่อมบำรุงและอื่นๆ รวมประมาณ 50 คน จึงออกแบบลำดับชั้นการบริหารงานให้กระชับและน้อยชั้น เพื่อให้มีความคล่องตัวสูงสุดในการจัดการทำงานและแก้ปัญหาให้ลูกค้า
+                        </p>
+                    </div>
+
+                    <!-- Visual Org Tree -->
+                    <div class="flex flex-col items-center">
+                        <!-- Level 1 -->
+                        <div class="bg-brand-navy text-white px-8 py-4 rounded-xl shadow-md text-center w-64 border border-slate-700">
+                            <span class="text-[11px] uppercase tracking-wider text-slate-400 block">Executive</span>
+                            <span class="font-bold text-base">กรรมการผู้จัดการ</span>
+                        </div>
+                        <div class="w-0.5 h-6 bg-slate-300"></div>
+                        <!-- Level 2 -->
+                        <div class="bg-slate-800 text-white px-8 py-3.5 rounded-xl shadow-sm text-center w-64">
+                            <span class="text-[11px] uppercase tracking-wider text-slate-300 block">Management</span>
+                            <span class="font-bold text-base">ผู้จัดการทั่วไป</span>
+                        </div>
+                        <div class="w-0.5 h-6 bg-slate-300"></div>
+
+                        <!-- Horizontal Connector Line (Desktop) -->
+                        <div class="hidden md:block w-2/3 h-0.5 bg-slate-300 relative">
+                            <div class="absolute left-0 top-0 w-0.5 h-6 bg-slate-300"></div>
+                            <div class="absolute left-1/2 -translate-x-1/2 top-0 w-0.5 h-6 bg-slate-300"></div>
+                            <div class="absolute right-0 top-0 w-0.5 h-6 bg-slate-300"></div>
+                        </div>
+
+                        <!-- Level 3: 3 Operational Pillars -->
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full mt-0 md:mt-6">
+                            <!-- Team 1: Sales & Technical -->
+                            <div class="bg-slate-50 rounded-xl p-6 border border-slate-200 flex flex-col">
+                                <div class="flex items-center gap-3 mb-4 pb-3 border-b border-slate-200">
+                                    <div class="w-10 h-10 rounded-lg bg-brand-navy text-white flex items-center justify-center shrink-0">
+                                        <i data-lucide="briefcase" class="w-5 h-5 text-brand-red"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold text-brand-navy">ทีมงานขายและบริการเทคนิค</h3>
+                                        <span class="text-xs text-slate-500">Sales & Technical Service</span>
+                                    </div>
+                                </div>
+                                <ul class="space-y-2.5 text-sm text-slate-700 text-body">
+                                    <li class="flex items-start gap-2">
+                                        <i data-lucide="check" class="w-4 h-4 text-brand-red shrink-0 mt-1"></i>
+                                        <span>ทำหน้าที่ขายบริการและให้คำปรึกษาแก่ลูกค้า</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <i data-lucide="check" class="w-4 h-4 text-brand-red shrink-0 mt-1"></i>
+                                        <span>ตรวจประเมินหน้างาน เพื่อให้คำแนะนำลูกค้าในการเลือกขนาดเครนที่เหมาะสมกับการใช้งาน</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <i data-lucide="check" class="w-4 h-4 text-brand-red shrink-0 mt-1"></i>
+                                        <span>แนะนำการเตรียมพื้นที่สำหรับการยก การเสนอราคาให้ลูกค้า และการเก็บค่าบริการนำส่งเจ้าหน้าที่การเงิน</span>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- Team 2: Operations -->
+                            <div class="bg-slate-50 rounded-xl p-6 border border-slate-200 flex flex-col">
+                                <div class="flex items-center gap-3 mb-4 pb-3 border-b border-slate-200">
+                                    <div class="w-10 h-10 rounded-lg bg-brand-navy text-white flex items-center justify-center shrink-0">
+                                        <i data-lucide="hard-hat" class="w-5 h-5 text-brand-red"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold text-brand-navy">ทีมปฏิบัติการ</h3>
+                                        <span class="text-xs text-slate-500">Operations & Lifting Planning</span>
+                                    </div>
+                                </div>
+                                <ul class="space-y-2.5 text-sm text-slate-700 text-body">
+                                    <li class="flex items-start gap-2">
+                                        <i data-lucide="check" class="w-4 h-4 text-brand-red shrink-0 mt-1"></i>
+                                        <span>ดูแลพนักงานขับเครน (ผู้บังคับปั้นจั่น) และพนักงานผู้ให้สัญญาณแก่ผู้บังคับปั้นจั่น</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <i data-lucide="check" class="w-4 h-4 text-brand-red shrink-0 mt-1"></i>
+                                        <span>วางแผนการยก (Lifting Plan) กรณีงานขนาดใหญ่ และการเคลื่อนย้ายปั้นจั่นเมื่อต้องไปทำงานในที่ไกลๆ</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <i data-lucide="check" class="w-4 h-4 text-brand-red shrink-0 mt-1"></i>
+                                        <span>ประสานงานซ่อมกับทีมงานช่างซ่อมบำรุงทันทีเมื่อพบว่ามีเครนเสีย</span>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- Team 3: Maintenance & Mobile Service -->
+                            <div class="bg-slate-50 rounded-xl p-6 border border-slate-200 flex flex-col">
+                                <div class="flex items-center gap-3 mb-4 pb-3 border-b border-slate-200">
+                                    <div class="w-10 h-10 rounded-lg bg-brand-navy text-white flex items-center justify-center shrink-0">
+                                        <i data-lucide="wrench" class="w-5 h-5 text-brand-red"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold text-brand-navy">ทีมช่างซ่อมบำรุง</h3>
+                                        <span class="text-xs text-slate-500">Maintenance & Mobile Service</span>
+                                    </div>
+                                </div>
+                                <ul class="space-y-2.5 text-sm text-slate-700 text-body">
+                                    <li class="flex items-start gap-2">
+                                        <i data-lucide="check" class="w-4 h-4 text-brand-red shrink-0 mt-1"></i>
+                                        <span>บำรุงรักษารถเครน ซ่อมเครื่องยนต์ ระบบช่วงล่าง ระบบไฟฟ้า และระบบ Hydraulic</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <i data-lucide="check" class="w-4 h-4 text-brand-red shrink-0 mt-1"></i>
+                                        <span>มีหน่วย <strong>Mobile Service</strong> บริการซ่อมฉุกเฉินนอกสถานที่อย่างเร่งด่วนเมื่อรถเครนมีปัญหา</span>
+                                    </li>
+                                    <li class="flex items-start gap-2">
+                                        <i data-lucide="shield-alert" class="w-4 h-4 text-brand-red shrink-0 mt-1"></i>
+                                        <span><strong>ความรับผิดชอบต่อลูกค้า:</strong> หากลูกค้าเกิดความเสียหายจากความล่าช้าเนื่องจากรถเครนเสีย (เช่น เทคอนกรีตไม่ได้จนคอนกรีตหมดอายุ) ทางบริษัทรับผิดชอบด้านค่าใช้จ่ายที่เกิดขึ้นให้กับลูกค้า</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             TAB 3: สินค้าและบริการ (PRODUCTS & SERVICES)
+             ========================================== -->
+        <section id="tab-services" class="tab-content">
+            <!-- Subpage Header -->
+            <div class="bg-brand-navy text-white py-12 border-b border-slate-800">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <span class="text-xs font-semibold uppercase tracking-widest text-brand-red">PRODUCTS & SERVICES</span>
+                    <h1 class="text-3xl font-bold mt-1">สินค้าและบริการ</h1>
+                    <p class="text-slate-300 text-sm mt-2">บริการให้เช่ารถเครนเคลื่อนที่ 10 - 30 ตัน และตู้คอนเทนเนอร์สำนักงานเคลื่อนที่ สำหรับงานก่อสร้างทุกประเภท</p>
+                </div>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-16">
+                <!-- 1. Main Products & Fleet -->
+                <div>
+                    <div class="mb-8">
+                        <span class="text-xs font-semibold uppercase tracking-widest text-brand-red">1. MAIN RENTAL FLEET</span>
+                        <h2 class="text-2xl font-bold text-brand-navy mt-1">ประเภทสินค้าและบริการให้เช่า</h2>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <!-- Crane Rental Card -->
+                        <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm flex flex-col">
+                            <div class="bg-brand-navy p-6 text-white flex items-center justify-between">
+                                <div>
+                                    <span class="text-xs font-medium text-red-400 uppercase tracking-wider">MOBILE CRANE RENTAL</span>
+                                    <h3 class="text-xl font-bold mt-0.5">รถเครนเคลื่อนที่ให้เช่า (ขนาด 10 – 30 ตัน)</h3>
+                                </div>
+                                <div class="w-12 h-12 rounded-xl bg-slate-800 flex items-center justify-center">
+                                    <i data-lucide="truck" class="w-6 h-6 text-brand-red"></i>
+                                </div>
+                            </div>
+                            <div class="p-6 sm:p-8 flex-grow flex flex-col justify-between space-y-6">
+                                <div class="space-y-4">
+                                    <p class="text-slate-600 text-sm leading-relaxed text-body">
+                                        ให้บริการเช่ารถเครนพร้อมผู้บังคับปั้นจั่นมืออาชีพ ทั้งแบบ<strong>รายวัน</strong>และ<strong>รายเดือน</strong> ปัจจุบันมีรถเครนพร้อมให้บริการรวม <strong>24 คัน</strong> (อาทิ ยี่ห้อ TADANO, KATO, SANY) ตรวจเช็คสภาพความพร้อมและลวดสลิงตามมาตรฐานความปลอดภัยก่อนออกปฏิบัติงานทุกครั้ง
+                                    </p>
+                                    <div class="grid grid-cols-2 sm:grid-cols-5 gap-2.5 pt-2">
+                                        <div class="bg-slate-50 border border-slate-200 rounded-xl p-3 text-center">
+                                            <span class="block text-lg font-bold text-brand-navy">10 ตัน</span>
+                                            <span class="text-[11px] text-slate-500">งานยกทั่วไป/คล่องตัว</span>
+                                        </div>
+                                        <div class="bg-slate-50 border border-slate-200 rounded-xl p-3 text-center">
+                                            <span class="block text-lg font-bold text-brand-navy">16 ตัน</span>
+                                            <span class="text-[11px] text-slate-500">งานก่อสร้างขนาดกลาง</span>
+                                        </div>
+                                        <div class="bg-slate-50 border border-slate-200 rounded-xl p-3 text-center">
+                                            <span class="block text-lg font-bold text-brand-navy">20 ตัน</span>
+                                            <span class="text-[11px] text-slate-500">งานเทคอนกรีต/โครงหลังคา</span>
+                                        </div>
+                                        <div class="bg-slate-50 border border-slate-200 rounded-xl p-3 text-center">
+                                            <span class="block text-lg font-bold text-brand-navy">25 ตัน</span>
+                                            <span class="text-[11px] text-slate-500">งานยกเครื่องจักร/Precast</span>
+                                        </div>
+                                        <div class="bg-red-50/60 border border-red-200 rounded-xl p-3 text-center col-span-2 sm:col-span-1">
+                                            <span class="block text-lg font-bold text-brand-red">30 ตัน</span>
+                                            <span class="text-[11px] text-slate-600">งานยกโครงสร้างหนัก/สะพาน</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pt-4 border-t border-slate-100 flex flex-wrap items-center justify-between gap-4">
+                                    <span class="text-xs text-slate-500">โทรปรึกษาขนาดเครนฟรี: 085-1555331, 085-1115626</span>
+                                    <button onclick="switchTab('contact')" class="bg-brand-navy hover:bg-slate-800 text-white text-xs font-medium px-4 py-2.5 rounded-lg transition">
+                                        ขอใบเสนอราคาเช่าเครน
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Container Office Card -->
+                        <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm flex flex-col">
+                            <div class="bg-slate-800 p-6 text-white flex items-center justify-between">
+                                <div>
+                                    <span class="text-xs font-medium text-slate-300 uppercase tracking-wider">MOBILE OFFICE CONTAINER</span>
+                                    <h3 class="text-xl font-bold mt-0.5">ตู้คอนเทนเนอร์สำนักงานเคลื่อนที่ให้เช่า</h3>
+                                </div>
+                                <div class="w-12 h-12 rounded-xl bg-slate-700 flex items-center justify-center">
+                                    <i data-lucide="box" class="w-6 h-6 text-brand-red"></i>
+                                </div>
+                            </div>
+                            <div class="p-6 sm:p-8 flex-grow flex flex-col justify-between space-y-6">
+                                <div class="space-y-4">
+                                    <p class="text-slate-600 text-sm leading-relaxed text-body">
+                                        บริการให้เช่าตู้คอนเทนเนอร์สำนักงานเคลื่อนที่ สำหรับใช้เป็นออฟฟิศหน้างานก่อสร้าง (Site Office) ห้องประชุมหน้างาน หรือที่พักเจ้าหน้าที่ควบคุมงาน โครงสร้างเหล็กแข็งแรง พร้อมหลังคากันความร้อน ประตูและหน้าต่างพร้อมเหล็กดัดปลอดภัย
+                                    </p>
+                                    <div class="bg-slate-50 rounded-xl p-4 border border-slate-200 grid grid-cols-2 gap-4">
+                                        <div>
+                                            <span class="text-xs text-slate-400 block">ขนาดมาตรฐาน</span>
+                                            <span class="text-base font-bold text-brand-navy">3 x 6 เมตร (18 ตร.ม.)</span>
+                                        </div>
+                                        <div>
+                                            <span class="text-xs text-slate-400 block">บริการขนส่งและติดตั้ง</span>
+                                            <span class="text-base font-bold text-brand-navy">พร้อมรถเครนยกติดตั้งถึงที่</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pt-4 border-t border-slate-100 flex flex-wrap items-center justify-between gap-4">
+                                    <span class="text-xs text-slate-500">เหมาะสำหรับโครงการก่อสร้างทุกขนาดในเชียงใหม่และภาคเหนือ</span>
+                                    <button onclick="switchTab('contact')" class="bg-brand-navy hover:bg-slate-800 text-white text-xs font-medium px-4 py-2.5 rounded-lg transition">
+                                        สอบถามเช่าตู้สำนักงาน
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Portfolio / Types of Lifting Operations -->
+                <div>
+                    <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+                        <div>
+                            <span class="text-xs font-semibold uppercase tracking-widest text-brand-red">2. SERVICE APPLICATIONS & PORTFOLIO</span>
+                            <h2 class="text-2xl font-bold text-brand-navy mt-1">ลักษณะงานบริการของเรา</h2>
+                            <p class="text-slate-600 text-sm mt-1 text-body">ครอบคลุมงานก่อสร้างทั่วไป งานโครงสร้างคอนกรีต งานติดตั้งเครื่องจักร และงานกู้ภัยฉุกเฉิน</p>
+                        </div>
+
+                        <!-- Category Filter Buttons -->
+                        <div class="flex flex-wrap gap-2">
+                            <button onclick="filterPortfolio('all')" data-filter="all" class="portfolio-filter-btn px-3.5 py-1.5 rounded-lg text-xs font-medium bg-brand-navy text-white transition">ทั้งหมด (11 ลักษณะงาน)</button>
+                            <button onclick="filterPortfolio('concrete')" data-filter="concrete" class="portfolio-filter-btn px-3.5 py-1.5 rounded-lg text-xs font-medium bg-white border border-slate-200 text-slate-600 hover:bg-slate-100 transition">งานคอนกรีต & โครงสร้าง</button>
+                            <button onclick="filterPortfolio('industrial')" data-filter="industrial" class="portfolio-filter-btn px-3.5 py-1.5 rounded-lg text-xs font-medium bg-white border border-slate-200 text-slate-600 hover:bg-slate-100 transition">งานยกเครื่องจักร & อุตสาหกรรม</button>
+                            <button onclick="filterPortfolio('special')" data-filter="special" class="portfolio-filter-btn px-3.5 py-1.5 rounded-lg text-xs font-medium bg-white border border-slate-200 text-slate-600 hover:bg-slate-100 transition">งานติดตั้งป้าย เสาสัญญาณ & กู้ภัย</button>
+                        </div>
+                    </div>
+
+                    <div id="portfolio-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- Item 1 -->
+                        <div data-category="concrete" class="portfolio-card bg-white rounded-xl border border-slate-200 p-6 shadow-sm hover:shadow-md transition">
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="px-2.5 py-1 rounded-md bg-slate-100 text-brand-navy text-xs font-medium">งานคอนกรีต</span>
+                                <i data-lucide="layers" class="w-5 h-5 text-brand-red"></i>
+                            </div>
+                            <h3 class="font-bold text-brand-navy text-lg">งานบริการยกเทคอนกรีตอาคาร</h3>
+                            <p class="text-slate-600 text-sm mt-2 text-body">บริการรถเครนยกพ็อกเก็ตเทคอนกรีต (Concrete Bucket) สำหรับอาคารสูง คอนโดมิเนียม และอาคารพาณิชย์ ประสานงานร่วมกับรถโม่คอนกรีตอย่างต่อเนื่อง</p>
+                        </div>
+
+                        <!-- Item 2 -->
+                        <div data-category="concrete" class="portfolio-card bg-white rounded-xl border border-slate-200 p-6 shadow-sm hover:shadow-md transition">
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="px-2.5 py-1 rounded-md bg-slate-100 text-brand-navy text-xs font-medium">งานโครงสร้างฐานราก</span>
+                                <i data-lucide="columns" class="w-5 h-5 text-brand-red"></i>
+                            </div>
+                            <h3 class="font-bold text-brand-navy text-lg">งานยกเทเสาตอหม้อและคานคอนกรีต</h3>
+                            <p class="text-slate-600 text-sm mt-2 text-body">บริการยกพ็อกเก็ตเทคอนกรีตสำหรับเสาตอหม้อ ฟุตติ้ง และเทคานคอนกรีตในพื้นที่ก่อสร้างที่รถโม่เข้าไม่ถึงหรือมีความลึก/ความสูง</p>
+                        </div>
+
+                        <!-- Item 3 -->
+                        <div data-category="concrete" class="portfolio-card bg-white rounded-xl border border-slate-200 p-6 shadow-sm hover:shadow-md transition">
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="px-2.5 py-1 rounded-md bg-slate-100 text-brand-navy text-xs font-medium">งาน Precast</span>
+                                <i data-lucide="layout-grid" class="w-5 h-5 text-brand-red"></i>
+                            </div>
+                            <h3 class="font-bold text-brand-navy text-lg">งานยกชิ้นส่วนผนังสำเร็จรูป (Precast)</h3>
+                            <p class="text-slate-600 text-sm mt-2 text-body">ความเชี่ยวชาญดั้งเดิมของเคมูฟว์ในการยกติดตั้งแผ่นผนังสำเร็จรูปพรีแคส เสา คาน และบันไดคอนกรีตสำเร็จรูปสำหรับโครงการอาคารชุดและหมู่บ้านจัดสรร</p>
+                        </div>
+
+                        <!-- Item 4 -->
+                        <div data-category="concrete" class="portfolio-card bg-white rounded-xl border border-slate-200 p-6 shadow-sm hover:shadow-md transition">
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="px-2.5 py-1 rounded-md bg-slate-100 text-brand-navy text-xs font-medium">งานโครงสร้างเหล็ก</span>
+                                <i data-lucide="home" class="w-5 h-5 text-brand-red"></i>
+                            </div>
+                            <h3 class="font-bold text-brand-navy text-lg">งานยกเหล็กโครงสร้างและโครงหลังคา</h3>
+                            <p class="text-slate-600 text-sm mt-2 text-body">บริการยกประกอบโครงถักเหล็ก (Truss) โครงหลังคาโกดัง โรงงาน อาคารพาณิชย์ และห้างสรรพสินค้า ด้วยความแม่นยำและปลอดภัย</p>
+                        </div>
+
+                        <!-- Item 5 -->
+                        <div data-category="concrete" class="portfolio-card bg-white rounded-xl border border-slate-200 p-6 shadow-sm hover:shadow-md transition">
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="px-2.5 py-1 rounded-md bg-slate-100 text-brand-navy text-xs font-medium">งานโยธาและสะพาน</span>
+                                <i data-lucide="git-commit" class="w-5 h-5 text-brand-red"></i>
+                            </div>
+                            <h3 class="font-bold text-brand-navy text-lg">งานยกคานสะพาน (Bridge Girder)</h3>
+                            <p class="text-slate-600 text-sm mt-2 text-body">บริการยกติดตั้งคานสะพานคอนกรีตอัดแรง ทั้งแบบใช้เครนเดี่ยวและเครนคู่ (Tandem Lift) พร้อมการวางแผนการยกโดยทีมปฏิบัติการมืออาชีพ</p>
+                        </div>
+
+                        <!-- Item 6 -->
+                        <div data-category="industrial" class="portfolio-card bg-white rounded-xl border border-slate-200 p-6 shadow-sm hover:shadow-md transition">
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="px-2.5 py-1 rounded-md bg-slate-100 text-brand-navy text-xs font-medium">งานอุตสาหกรรม</span>
+                                <i data-lucide="cog" class="w-5 h-5 text-brand-red"></i>
+                            </div>
+                            <h3 class="font-bold text-brand-navy text-lg">งานยกและติดตั้งเครื่องจักร</h3>
+                            <p class="text-slate-600 text-sm mt-2 text-body">บริการยกลงเครื่องจักรจากรถเทรลเลอร์ ย้ายตำแหน่ง หรือยกติดตั้งเครื่องจักรโรงงานอุตสาหกรรมและแพลนท์งานก่อสร้าง ด้วยสลิงและอุปกรณ์ที่ได้มาตรฐาน</p>
+                        </div>
+
+                        <!-- Item 7 -->
+                        <div data-category="industrial" class="portfolio-card bg-white rounded-xl border border-slate-200 p-6 shadow-sm hover:shadow-md transition">
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="px-2.5 py-1 rounded-md bg-slate-100 text-brand-navy text-xs font-medium">งานถังและไซโล</span>
+                                <i data-lucide="database" class="w-5 h-5 text-brand-red"></i>
+                            </div>
+                            <h3 class="font-bold text-brand-navy text-lg">งานยกถังน้ำและติดตั้งไซโล (Silo)</h3>
+                            <p class="text-slate-600 text-sm mt-2 text-body">บริการยกถังเหล็กขนาดใหญ่ ถังเก็บน้ำ และยกตั้งไซโลปูนซีเมนต์สำหรับแพลนท์คอนกรีตและโรงงานอุตสาหกรรม</p>
+                        </div>
+
+                        <!-- Item 8 -->
+                        <div data-category="industrial" class="portfolio-card bg-white rounded-xl border border-slate-200 p-6 shadow-sm hover:shadow-md transition">
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="px-2.5 py-1 rounded-md bg-slate-100 text-brand-navy text-xs font-medium">งานขนย้ายทั่วไป</span>
+                                <i data-lucide="package" class="w-5 h-5 text-brand-red"></i>
+                            </div>
+                            <h3 class="font-bold text-brand-navy text-lg">งานยกตู้คอนเทนเนอร์ ชิ้นงานใหญ่ & ต้นไม้</h3>
+                            <p class="text-slate-600 text-sm mt-2 text-body">บริการยกตู้คอนเทนเนอร์สินค้า ตู้สำนักงาน ชิ้นงานประติมากรรมขนาดใหญ่ และงานยกย้ายต้นไม้ใหญ่เพื่อจัดภูมิทัศน์</p>
+                        </div>
+
+                        <!-- Item 9 -->
+                        <div data-category="special" class="portfolio-card bg-white rounded-xl border border-slate-200 p-6 shadow-sm hover:shadow-md transition">
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="px-2.5 py-1 rounded-md bg-slate-100 text-brand-navy text-xs font-medium">งานโครงสร้างสูง</span>
+                                <i data-lucide="radio-tower" class="w-5 h-5 text-brand-red"></i>
+                            </div>
+                            <h3 class="font-bold text-brand-navy text-lg">งานยกติดตั้งเสาสัญญาณและปั้นจั่นสาน</h3>
+                            <p class="text-slate-600 text-sm mt-2 text-body">บริการใช้รถเครนบูมยาวและต่อจิ๊ป (Jib) สำหรับยกติดตั้งโครงเสาสัญญาณสื่อสาร และงานยกประกอบโครงปั้นจั่นสานตอกเสาเข็ม</p>
+                        </div>
+
+                        <!-- Item 10 -->
+                        <div data-category="special" class="portfolio-card bg-white rounded-xl border border-slate-200 p-6 shadow-sm hover:shadow-md transition">
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="px-2.5 py-1 rounded-md bg-slate-100 text-brand-navy text-xs font-medium">งานป้ายโฆษณา</span>
+                                <i data-lucide="panel-top" class="w-5 h-5 text-brand-red"></i>
+                            </div>
+                            <h3 class="font-bold text-brand-navy text-lg">งานยกติดตั้งป้ายโฆษณาขนาดใหญ่</h3>
+                            <p class="text-slate-600 text-sm mt-2 text-body">บริการยกติดตั้งโครงป้ายบิลบอร์ด ป้ายโครงการคอมมูนิตี้มอลล์ และป้ายโชว์รูมขนาดใหญ่ด้วยความเรียบร้อยและปลอดภัย</p>
+                        </div>
+
+                        <!-- Item 11 -->
+                        <div data-category="special" class="portfolio-card bg-white rounded-xl border border-slate-200 p-6 shadow-sm hover:shadow-md transition">
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="px-2.5 py-1 rounded-md bg-red-50 text-brand-red text-xs font-medium">งานฉุกเฉิน</span>
+                                <i data-lucide="life-buoy" class="w-5 h-5 text-brand-red"></i>
+                            </div>
+                            <h3 class="font-bold text-brand-navy text-lg">งานกู้และยกรถอุบัติเหตุ</h3>
+                            <p class="text-slate-600 text-sm mt-2 text-body">บริการรถเครนเข้าช่วยเหลือและกู้รถบรรทุก รถโม่ปูน หรือยานพาหนะขนาดใหญ่ที่ประสบอุบัติเหตุพลิกคว่ำหรือตกข้างทางอย่างปลอดภัย</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             TAB 4: การอ่าน LOAD CHART & คู่มือเครน
+             ========================================== -->
+        <section id="tab-loadchart" class="tab-content">
+            <!-- Subpage Header -->
+            <div class="bg-brand-navy text-white py-12 border-b border-slate-800">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <span class="text-xs font-semibold uppercase tracking-widest text-brand-red">CRANE ENGINEERING MANUAL</span>
+                    <h1 class="text-3xl font-bold mt-1">วิธีการอ่าน Load Chart และการเลือกขนาดรถเครน</h1>
+                    <p class="text-slate-300 text-sm mt-2">คู่มือการอ่านตารางน้ำหนัก (Rated Loads Chart) ทั้ง 15 องค์ประกอบ พร้อมตัวอย่างการคำนวณภาระรวม (Total Loads)</p>
+                </div>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-14">
+                <!-- Definition Box -->
+                <div class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm">
+                    <div class="flex flex-col md:flex-row gap-6 items-start md:items-center justify-between">
+                        <div class="space-y-2 max-w-3xl">
+                            <span class="text-xs font-bold uppercase tracking-wider text-brand-red">RATED LOADS CHART DEFINITION</span>
+                            <h2 class="text-2xl font-bold text-brand-navy">ตารางน้ำหนัก (Rated Loads Chart) คืออะไร?</h2>
+                            <p class="text-slate-600 text-sm leading-relaxed text-body">
+                                <strong>ตารางน้ำหนัก (Rated Loads Chart)</strong> คือ ตารางที่แสดงความสามารถในการยกน้ำหนักสูงสุดที่ยอมให้ (Working Loads Limit) ของรถเครน ซึ่งผู้ผลิตจะเป็นผู้กำหนดตามขนาดและรุ่นผลิต ซึ่งมีความแตกต่างกัน ดังนั้นผู้เกี่ยวข้องกับรถเครนจำเป็นต้องมีความเข้าใจและแปลความหมายต่างๆ ที่แสดงไว้ได้ เพื่อนำไปประยุกต์ใช้งานได้อย่างถูกต้องและปลอดภัย
+                            </p>
+                        </div>
+                        <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 shrink-0 text-xs space-y-1.5">
+                            <div class="font-semibold text-brand-navy">ยี่ห้อรถเครนที่พบมากในประเทศไทย:</div>
+                            <div class="flex flex-wrap gap-1.5">
+                                <span class="px-2.5 py-1 bg-white border border-slate-200 rounded font-medium">TADANO</span>
+                                <span class="px-2.5 py-1 bg-white border border-slate-200 rounded font-medium">KATO</span>
+                                <span class="px-2.5 py-1 bg-white border border-slate-200 rounded font-medium">SANY</span>
+                                <span class="px-2.5 py-1 bg-white border border-slate-200 rounded font-medium">LIEBHERR</span>
+                                <span class="px-2.5 py-1 bg-white border border-slate-200 rounded font-medium">KOBELCO</span>
+                                <span class="px-2.5 py-1 bg-white border border-slate-200 rounded font-medium">GROVE</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 15 Key Elements of a Load Chart -->
+                <div>
+                    <div class="mb-6">
+                        <span class="text-xs font-semibold uppercase tracking-widest text-brand-red">15 PARAMETERS OF LOAD CHART</span>
+                        <h2 class="text-2xl font-bold text-brand-navy mt-1">15 ความหมายข้อความและสัญลักษณ์บนตารางน้ำหนัก</h2>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                        <!-- 1-3 -->
+                        <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+                            <span class="text-xs font-bold text-brand-red">หัวข้อที่ 1 – 3</span>
+                            <h3 class="font-bold text-brand-navy mt-1">ผู้ผลิต, รุ่นผลิต และหน่วยน้ำหนัก</h3>
+                            <ul class="mt-3 space-y-2 text-xs text-slate-600 text-body">
+                                <li><strong>1. ผู้ผลิต:</strong> ระบุยี่ห้อ เช่น TADANO, KATO, SANY</li>
+                                <li><strong>2. รุ่นผลิต:</strong> เช่น <code class="bg-slate-100 px-1.5 py-0.5 rounded text-brand-navy font-sans">TR250M-6</code> หมายถึง รถเครน TADANO ประเภท Rough Terrain Crane ขนาดยกได้ 25 ตัน (Domestic Model 6)</li>
+                                <li><strong>3. หน่วยน้ำหนักที่ใช้:</strong> เช่น <code class="bg-slate-100 px-1.5 py-0.5 rounded text-brand-navy font-sans">Unit : ton</code> = หน่วยวัดเป็นตัน</li>
+                            </ul>
+                        </div>
+
+                        <!-- 4 -->
+                        <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+                            <span class="text-xs font-bold text-brand-red">หัวข้อที่ 4</span>
+                            <h3 class="font-bold text-brand-navy mt-1">ความกว้างของขาเครน (With Outriggers Set)</h3>
+                            <p class="text-xs text-slate-500 mt-1 text-body">แสดงเงื่อนไขความกว้างของการกางขาเครน เช่น:</p>
+                            <ul class="mt-2.5 space-y-1.5 text-xs text-slate-700 bg-slate-50 p-3 rounded-lg border border-slate-100">
+                                <li>• <strong>Fully extended (7.3 m.)</strong> = ยืดขาเต็ม 7.3 เมตร</li>
+                                <li>• <strong>Middle extended (5.5 m.)</strong> = ยืดขาครึ่งหนึ่ง 5.5 เมตร</li>
+                                <li>• <strong>Minimum extended (2.54 m.)</strong> = ยืดขาน้อยสุด 2.54 เมตร</li>
+                            </ul>
+                        </div>
+
+                        <!-- 5 -->
+                        <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+                            <span class="text-xs font-bold text-brand-red">หัวข้อที่ 5</span>
+                            <h3 class="font-bold text-brand-navy mt-1">ตำแหน่งของการยก (Slewing Position)</h3>
+                            <p class="text-xs text-slate-500 mt-1 text-body">แสดงตำแหน่งการยกรอบจุดศูนย์กลางการหมุน (มักอยู่มุมขวาบนของตาราง):</p>
+                            <div class="mt-2.5 grid grid-cols-2 gap-2 text-xs bg-slate-50 p-3 rounded-lg border border-slate-100">
+                                <div><strong>360°</strong> = ยกได้รอบแกนสวิง</div>
+                                <div><strong>Over Front</strong> = เฉพาะด้านหน้า</div>
+                                <div><strong>Over Rear</strong> = เฉพาะด้านหลัง</div>
+                                <div><strong>Over Side</strong> = เฉพาะด้านข้าง</div>
+                            </div>
+                        </div>
+
+                        <!-- 6 & 7 -->
+                        <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+                            <span class="text-xs font-bold text-brand-red">หัวข้อที่ 6 – 7</span>
+                            <h3 class="font-bold text-brand-navy mt-1">ความยาวบูม (A) และ ช่วงองศาบูม</h3>
+                            <ul class="mt-3 space-y-2 text-xs text-slate-600 text-body">
+                                <li><strong>6. ความยาวบูม (Boom Length - แกน A):</strong> อ่านตามแนวนอนด้านบนตาราง เช่น บูมยาว <code class="bg-slate-100 px-1 py-0.5 rounded">10.65 m.</code>, <code class="bg-slate-100 px-1 py-0.5 rounded">18.02 m.</code>, <code class="bg-slate-100 px-1 py-0.5 rounded">25.35 m.</code>, <code class="bg-slate-100 px-1 py-0.5 rounded">32.67 m.</code> และ <code class="bg-slate-100 px-1 py-0.5 rounded">40.0 m.</code></li>
+                                <li><strong>7. ช่วงองศาบูม (Boom Angles):</strong> ความลาดชันของบูมหลักวัดจากแนวระนาบ</li>
+                            </ul>
+                        </div>
+
+                        <!-- 8 & 9 -->
+                        <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+                            <span class="text-xs font-bold text-brand-red">หัวข้อที่ 8 – 9</span>
+                            <h3 class="font-bold text-brand-navy mt-1">ความยาวจิ๊ป (C) และ ช่วงองศาจิ๊ป (D)</h3>
+                            <ul class="mt-3 space-y-2 text-xs text-slate-600 text-body">
+                                <li><strong>8. ความยาวจิ๊ป (Jib Length - แกน C):</strong> เช่น ใช้ความยาวบูมหลัก 30.5 m. ต่อจิ๊ปยาว 8.0 m. หรือ 13.0 m.</li>
+                                <li><strong>9. ช่วงองศาจิ๊ป (Jib Offset Angle - แกน D):</strong> ความลาดชันของจิ๊ปเทียบกับแนวจุดศูนย์กลางบูมหลัก เช่น ใช้องศาจิ๊ปที่ <strong>5°, 25° และ 45°</strong></li>
+                            </ul>
+                        </div>
+
+                        <!-- 10 & 11 -->
+                        <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+                            <span class="text-xs font-bold text-brand-red">หัวข้อที่ 10 – 11</span>
+                            <h3 class="font-bold text-brand-navy mt-1">ระยะห่างการยก (B) และ ความสูงการยก</h3>
+                            <ul class="mt-3 space-y-2 text-xs text-slate-600 text-body">
+                                <li><strong>10. ระยะห่างของการยก (Working / Load Radius - แกน B):</strong> วัดจากจุดศูนย์กลางวงสวิงของรถเครนไปถึงจุดศูนย์ถ่วงชิ้นงาน เช่น บูม 9.5 m. ที่ระยะ 2.5–3.5 m. ยกได้ 25.0 ตัน / ระยะ 4.0 m. ยกได้ 23.0 ตัน / ระยะ 4.5 m. ยกได้ 21.2 ตัน</li>
+                                <li><strong>11. ความสูงของการยก (Lifting Height):</strong> ระยะความสูงมากสุดจากพื้นดินถึงใต้ตะขอรอก (Under hook)</li>
+                            </ul>
+                        </div>
+
+                        <!-- 12 - 15 -->
+                        <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm md:col-span-2 lg:col-span-3">
+                            <span class="text-xs font-bold text-brand-red">หัวข้อที่ 12 – 15</span>
+                            <h3 class="font-bold text-brand-navy mt-1">องค์ประกอบสำคัญในการคำนวณน้ำหนักยกรวมและอุปกรณ์พิเศษ</h3>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-3 text-xs text-slate-600 text-body">
+                                <div class="bg-slate-50 p-3.5 rounded-lg border border-slate-100">
+                                    <strong class="text-brand-navy block mb-1">12. น้ำหนักถ่วง (Counterweight)</strong>
+                                    สำหรับเครนขนาดใหญ่ แสดงไว้เหนือตาราง เช่น ใช้เคาเตอร์เวท 72 ตัน หรือ 138 ตัน
+                                </div>
+                                <div class="bg-slate-50 p-3.5 rounded-lg border border-slate-100">
+                                    <strong class="text-brand-navy block mb-1">13. จำนวนลวดสลิง (Part Line)</strong>
+                                    จำนวนการทดสลิงให้เหมาะกับน้ำหนักยก ความยาวบูม และนำไปคำนวณหาน้ำหนักสลิงรวม
+                                </div>
+                                <div class="bg-slate-50 p-3.5 rounded-lg border border-slate-100">
+                                    <strong class="text-brand-navy block mb-1">14. ขนาดรอกยก (Hook Block)</strong>
+                                    ขนาดรอกที่เลือกใช้ ซึ่งน้ำหนักรอก (Hook weight) จะถูกนำไปคำนวณรวมเป็นภาระการยก
+                                </div>
+                                <div class="bg-slate-50 p-3.5 rounded-lg border border-slate-100">
+                                    <strong class="text-brand-navy block mb-1">15. อุปกรณ์พิเศษอื่นๆ</strong>
+                                    เช่น การใช้ Luffing Jib หรือระบบ Y-guy system สำหรับงานยกสูงพิเศษ
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 16. Practical Examples of Reading Tadano TR250M-5 Load Chart -->
+                <div class="bg-brand-navy text-white rounded-2xl p-6 sm:p-10 shadow-sm">
+                    <div class="mb-6">
+                        <span class="text-xs font-semibold uppercase tracking-widest text-brand-red">EXAMPLE CASE STUDY</span>
+                        <h2 class="text-2xl font-bold mt-1">16. ตัวอย่างการอ่านตารางน้ำหนัก: รถเครน TADANO รุ่น TR250M-5</h2>
+                        <p class="text-slate-300 text-sm mt-1">กรณีศึกษามาตรฐานจากตารางน้ำหนักและกราฟระยะความสูง (Working Range Diagram)</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="bg-slate-800/90 border border-slate-700 rounded-xl p-6 flex flex-col justify-between">
+                            <div>
+                                <span class="px-2.5 py-1 rounded bg-red-500/20 text-red-300 text-xs font-semibold">ตัวอย่างที่ 1 (ใช้บูมหลัก)</span>
+                                <ul class="mt-4 space-y-2 text-sm text-slate-300">
+                                    <li>• ยืดขาเต็ม: <strong>6.3 เมตร</strong></li>
+                                    <li>• ใช้บูมยาว (A): <strong>23.5 เมตร</strong></li>
+                                    <li>• ระยะห่างการยก (B): <strong>8.0 เมตร</strong></li>
+                                </ul>
+                            </div>
+                            <div class="mt-6 pt-4 border-t border-slate-700 flex items-baseline justify-between">
+                                <span class="text-xs text-slate-400">สามารถรับน้ำหนักได้</span>
+                                <span class="text-2xl font-bold text-white">9.0 <span class="text-sm font-normal text-brand-red">ตัน</span></span>
+                            </div>
+                        </div>
+
+                        <div class="bg-slate-800/90 border border-slate-700 rounded-xl p-6 flex flex-col justify-between">
+                            <div>
+                                <span class="px-2.5 py-1 rounded bg-red-500/20 text-red-300 text-xs font-semibold">ตัวอย่างที่ 2 (ต่อจิ๊ป Jib)</span>
+                                <ul class="mt-4 space-y-2 text-sm text-slate-300">
+                                    <li>• ยืดขาเต็ม: <strong>6.3 เมตร</strong></li>
+                                    <li>• ต่อจิ๊ปยาว (C): <strong>13.0 เมตร</strong></li>
+                                    <li>• จิ๊ปนอน (D): <strong>25 องศา</strong> / บูมหลักนอน: <strong>60 องศา</strong></li>
+                                </ul>
+                            </div>
+                            <div class="mt-6 pt-4 border-t border-slate-700 flex items-baseline justify-between">
+                                <span class="text-xs text-slate-400">สามารถรับน้ำหนักได้</span>
+                                <span class="text-2xl font-bold text-white">0.9 <span class="text-sm font-normal text-brand-red">ตัน</span></span>
+                            </div>
+                        </div>
+
+                        <div class="bg-slate-800/90 border border-slate-700 rounded-xl p-6 flex flex-col justify-between">
+                            <div>
+                                <span class="px-2.5 py-1 rounded bg-red-500/20 text-red-300 text-xs font-semibold">ตัวอย่างที่ 3 (เทียบกราฟความสูง)</span>
+                                <ul class="mt-4 space-y-2 text-sm text-slate-300">
+                                    <li>• ยืดขาเต็ม: <strong>6.3 เมตร</strong> | บูมยาว: <strong>30.5 เมตร</strong></li>
+                                    <li>• บูมหลักนอน: <strong>60 องศา</strong></li>
+                                    <li>• ได้ระยะห่าง: <strong>15 เมตร</strong> ที่ความสูง: <strong>25 เมตร</strong></li>
+                                </ul>
+                            </div>
+                            <div class="mt-6 pt-4 border-t border-slate-700 flex items-baseline justify-between">
+                                <span class="text-xs text-slate-400">สามารถรับน้ำหนักได้</span>
+                                <span class="text-2xl font-bold text-white">3.8 <span class="text-sm font-normal text-brand-red">ตัน</span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 17. Crane Selection Steps & Interactive Total Load Calculator -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                    <!-- Left: 4 Steps & Reference Table -->
+                    <div class="lg:col-span-7 space-y-6">
+                        <div class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-5">
+                            <span class="text-xs font-semibold uppercase tracking-widest text-brand-red">CRANE SELECTION WORKFLOW</span>
+                            <h2 class="text-2xl font-bold text-brand-navy">17. ขั้นตอนการเลือกขนาดของรถเครน (4 ขั้นตอนมาตรฐาน)</h2>
+                            
+                            <div class="space-y-4 text-sm text-slate-700 text-body">
+                                <div class="flex gap-3.5">
+                                    <span class="w-7 h-7 rounded-lg bg-brand-navy text-white font-bold text-xs flex items-center justify-center shrink-0 mt-0.5 font-sans">1</span>
+                                    <div>
+                                        <strong class="text-brand-navy font-sans">หาตำแหน่งชิ้นงานที่จะทำการยก:</strong> โดยต้องทราบระยะความสูง (Lifting Height) ที่จะยก
+                                    </div>
+                                </div>
+                                <div class="flex gap-3.5">
+                                    <span class="w-7 h-7 rounded-lg bg-brand-navy text-white font-bold text-xs flex items-center justify-center shrink-0 mt-0.5 font-sans">2</span>
+                                    <div>
+                                        <strong class="text-brand-navy font-sans">หาตำแหน่งที่ตั้งรถเครนที่เหมาะสม (Working Radius):</strong> ทราบระยะห่างที่จะยก โดยพิจารณาปัจจัยและข้อจำกัดหน้างาน เช่น แผนการยก วิธีการยึดจับ แนวอาคาร แนวท่อระบายน้ำ แนวเสาไฟฟ้า และอุปสรรคอื่นๆ
+                                    </div>
+                                </div>
+                                <div class="flex gap-3.5">
+                                    <span class="w-7 h-7 rounded-lg bg-brand-navy text-white font-bold text-xs flex items-center justify-center shrink-0 mt-0.5 font-sans">3</span>
+                                    <div>
+                                        <strong class="text-brand-navy font-sans">ตรวจสอบหาน้ำหนักรวม หรือภาระที่จะเกิดขึ้น (Total Loads):</strong>
+                                        <div class="mt-2 bg-slate-50 p-3.5 rounded-xl border border-slate-200 text-xs font-sans space-y-1">
+                                            <div class="font-bold text-brand-navy">ภาระรวม (Total Loads) =</div>
+                                            <div>+ น้ำหนักชิ้นงาน (Weight)</div>
+                                            <div>+ น้ำหนักรอก (Hook block weight)</div>
+                                            <div>+ น้ำหนักอุปกรณ์ยก (Equipment weight เช่น สลิงผูกมัด, สเก็น)</div>
+                                            <div>+ น้ำหนักลวดสลิง (คำนวณจาก ความสูง × น้ำหนักสลิงต่อเมตร × จำนวนรอบทดสลิง)</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex gap-3.5">
+                                    <span class="w-7 h-7 rounded-lg bg-brand-navy text-white font-bold text-xs flex items-center justify-center shrink-0 mt-0.5 font-sans">4</span>
+                                    <div>
+                                        <strong class="text-brand-navy font-sans">เทียบตารางเลือกขนาดรถเครน:</strong> นำน้ำหนักรวม ระยะห่าง และความสูง ไปเทียบกับตารางน้ำหนักและกราฟความสูง (พร้อมเผื่อค่าปลอดภัย %SLL หรือ Safety Loads Limit)
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Reference Comparison Table from PDF -->
+                            <div class="pt-4">
+                                <h4 class="font-bold text-brand-navy text-sm mb-3">ตารางตัวอย่างการเลือกขนาดรถเครนตามเงื่อนไขการยก (น้ำหนักรวม 3 ตัน):</h4>
+                                <div class="overflow-x-auto border border-slate-200 rounded-xl">
+                                    <table class="w-full text-left border-collapse text-xs">
+                                        <thead>
+                                            <tr class="bg-slate-100 text-brand-navy border-b border-slate-200">
+                                                <th class="p-3 font-semibold">น้ำหนักรวม (ตัน)</th>
+                                                <th class="p-3 font-semibold">ระยะห่าง (ม.)</th>
+                                                <th class="p-3 font-semibold">ความสูง (ม.)</th>
+                                                <th class="p-3 font-semibold">ขนาดเครน (ตัน)</th>
+                                                <th class="p-3 font-semibold">รุ่นอ้างอิง</th>
+                                                <th class="p-3 font-semibold">ใช้บูม (ม.)</th>
+                                                <th class="p-3 font-semibold">ต่อจิ๊ป (ม.)</th>
+                                                <th class="p-3 font-semibold text-brand-red">ยกได้จริง (ตัน)</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="divide-y divide-slate-200 text-slate-700">
+                                            <tr>
+                                                <td class="p-3 font-medium">3</td>
+                                                <td class="p-3">20</td>
+                                                <td class="p-3">20</td>
+                                                <td class="p-3 font-bold">50</td>
+                                                <td class="p-3">TR500M-2</td>
+                                                <td class="p-3">41.2</td>
+                                                <td class="p-3">-</td>
+                                                <td class="p-3 font-bold text-brand-navy">3.6</td>
+                                            </tr>
+                                            <tr class="bg-slate-50/60">
+                                                <td class="p-3 font-medium">3</td>
+                                                <td class="p-3">20</td>
+                                                <td class="p-3">20</td>
+                                                <td class="p-3 font-bold">80</td>
+                                                <td class="p-3">TG800M-1</td>
+                                                <td class="p-3">36.0</td>
+                                                <td class="p-3">-</td>
+                                                <td class="p-3 font-bold text-brand-navy">6.9</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="p-3 font-medium">3</td>
+                                                <td class="p-3">20</td>
+                                                <td class="p-3">40</td>
+                                                <td class="p-3 font-bold">100</td>
+                                                <td class="p-3">TG1000M-1</td>
+                                                <td class="p-3">44.0 (70°)</td>
+                                                <td class="p-3">15.0 (5°)</td>
+                                                <td class="p-3 font-bold text-brand-navy">3.7</td>
+                                            </tr>
+                                            <tr class="bg-slate-50/60">
+                                                <td class="p-3 font-medium">3</td>
+                                                <td class="p-3">40</td>
+                                                <td class="p-3">20</td>
+                                                <td class="p-3 font-bold">130</td>
+                                                <td class="p-3">ATF130G-5</td>
+                                                <td class="p-3">43.0</td>
+                                                <td class="p-3">-</td>
+                                                <td class="p-3 font-bold text-brand-navy">5.9</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="p-3 font-medium">3</td>
+                                                <td class="p-3">40</td>
+                                                <td class="p-3">40</td>
+                                                <td class="p-3 font-bold">200</td>
+                                                <td class="p-3">LTM1200-5.1</td>
+                                                <td class="p-3">67.3</td>
+                                                <td class="p-3">-</td>
+                                                <td class="p-3 font-bold text-brand-navy">6.1</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Interactive Total Loads Calculator -->
+                    <div class="lg:col-span-5">
+                        <div class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm">
+                            <div class="flex items-center gap-3 pb-4 border-b border-slate-200 mb-5">
+                                <div class="w-10 h-10 rounded-xl bg-brand-navy text-white flex items-center justify-center">
+                                    <i data-lucide="calculator" class="w-5 h-5 text-brand-red"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-brand-navy">โปรแกรมคำนวณภาระรวมเบื้องต้น</h3>
+                                    <p class="text-xs text-slate-500">Total Loads Calculator (ตามหลักการข้อ 17.3)</p>
+                                </div>
+                            </div>
+
+                            <div class="space-y-4 text-sm">
+                                <div>
+                                    <label class="block text-xs font-medium text-slate-700 mb-1">1. น้ำหนักชิ้นงาน (Weight) - ตัน</label>
+                                    <input type="number" id="calc-item-weight" value="2.50" step="0.1" min="0" oninput="calculateTotalLoad()" class="w-full px-3.5 py-2 rounded-lg border border-slate-300 focus:outline-none focus:border-brand-navy text-brand-navy font-semibold">
+                                </div>
+                                <div class="grid grid-cols-2 gap-3">
+                                    <div>
+                                        <label class="block text-xs font-medium text-slate-700 mb-1">2. น้ำหนักรอก (Hook) - ตัน</label>
+                                        <input type="number" id="calc-hook-weight" value="0.25" step="0.05" min="0" oninput="calculateTotalLoad()" class="w-full px-3.5 py-2 rounded-lg border border-slate-300 focus:outline-none focus:border-brand-navy text-brand-navy font-semibold">
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-medium text-slate-700 mb-1">3. อุปกรณ์ยก (สเก็น/สลิง) - ตัน</label>
+                                        <input type="number" id="calc-equip-weight" value="0.08" step="0.01" min="0" oninput="calculateTotalLoad()" class="w-full px-3.5 py-2 rounded-lg border border-slate-300 focus:outline-none focus:border-brand-navy text-brand-navy font-semibold">
+                                    </div>
+                                </div>
+                                <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200 space-y-3">
+                                    <span class="text-xs font-semibold text-brand-navy block">4. คำนวณน้ำหนักลวดสลิง (Wire rope weight)</span>
+                                    <div class="grid grid-cols-3 gap-2">
+                                        <div>
+                                            <label class="block text-[11px] text-slate-500 mb-1">ความสูงยก (ม.)</label>
+                                            <input type="number" id="calc-height" value="15" step="1" min="1" oninput="calculateTotalLoad()" class="w-full px-2.5 py-1.5 rounded border border-slate-300 text-xs font-semibold">
+                                        </div>
+                                        <div>
+                                            <label class="block text-[11px] text-slate-500 mb-1">กก./เมตร</label>
+                                            <input type="number" id="calc-rope-kg" value="1.1" step="0.1" min="0.1" oninput="calculateTotalLoad()" class="w-full px-2.5 py-1.5 rounded border border-slate-300 text-xs font-semibold">
+                                        </div>
+                                        <div>
+                                            <label class="block text-[11px] text-slate-500 mb-1">จำนวนรอบทด</label>
+                                            <input type="number" id="calc-parts" value="4" step="1" min="1" oninput="calculateTotalLoad()" class="w-full px-2.5 py-1.5 rounded border border-slate-300 text-xs font-semibold">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="bg-brand-navy text-white p-5 rounded-xl space-y-2">
+                                    <div class="flex justify-between items-center text-xs text-slate-300">
+                                        <span>น้ำหนักลวดสลิงรวม:</span>
+                                        <span id="res-rope-weight">0.066 ตัน (66 กก.)</span>
+                                    </div>
+                                    <div class="flex justify-between items-baseline pt-2 border-t border-slate-700">
+                                        <span class="text-sm font-medium">ภาระรวมทั้งหมด (Total Loads):</span>
+                                        <span id="res-total-load" class="text-2xl font-bold text-white">2.90 ตัน</span>
+                                    </div>
+                                    <p class="text-[11px] text-slate-400 pt-1">
+                                        *นำค่าภาระรวมที่ได้ไปเทียบกับระยะรัศมีทำการ (Working Radius) ในตาราง Load Chart หรือโทรปรึกษาทีมเทคนิคเคมูฟว์เพื่อประเมินหน้างานจริง
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             TAB 5: คู่มือรถเครน (CRANE MANUALS - 88 PDFs)
+             ========================================== -->
+        <section id="tab-manuals" class="tab-content">
+            <!-- Subpage Header -->
+            <div class="bg-brand-navy text-white py-12 border-b border-slate-800">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+                        <div>
+                            <span class="text-xs font-semibold uppercase tracking-widest text-brand-red">CRANE MANUALS & SPEC SHEETS REPOSITORY</span>
+                            <h1 class="text-3xl font-bold mt-1">คลังคู่มือรถเครนและตารางรับน้ำหนัก (Crane Manuals)</h1>
+                            <p class="text-slate-300 text-sm mt-2 max-w-2xl text-body">
+                                รวบรวมเอกสารสเปครถเครนและตารางรับน้ำหนัก (Rated Loads Chart / Working Range) มาตรฐานผู้ผลิตจำนวน 88 รุ่น สำหรับวิศวกร ผู้ควบคุมงาน และลูกค้าเพื่อใช้ในการวางแผนการยก (Lifting Plan)
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap items-center gap-3 shrink-0">
+                            <a href="https://drive.google.com/drive/folders/1cgofaGe5ChdpycySSvynhwbi3-l6aJaU?usp=sharing" target="_blank" rel="noopener noreferrer" class="bg-brand-red hover:bg-brand-redDark text-white text-sm font-medium px-5 py-3 rounded-xl transition shadow-sm inline-flex items-center gap-2">
+                                <i data-lucide="folder-symlink" class="w-4 h-4"></i>
+                                <span>เปิดโฟลเดอร์ Google Drive ทั้งหมด (88 ไฟล์ PDF)</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
+                <!-- Summary Brand Stats Bar -->
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+                    <button onclick="setManualBrand('ALL')" data-brand="ALL" class="manual-brand-btn bg-brand-navy text-white p-4 rounded-xl border border-brand-navy text-left transition shadow-sm">
+                        <span class="text-[11px] uppercase tracking-wider opacity-75 block">ทุกยี่ห้อรวม</span>
+                        <div class="flex items-baseline justify-between mt-1">
+                            <span class="text-xl font-bold">ทั้งหมด</span>
+                            <span class="text-xs font-semibold px-2 py-0.5 rounded bg-white/20">88 ไฟล์</span>
+                        </div>
+                    </button>
+                    <button onclick="setManualBrand('TADANO')" data-brand="TADANO" class="manual-brand-btn bg-white hover:bg-slate-50 text-brand-navy p-4 rounded-xl border border-slate-200 text-left transition shadow-sm">
+                        <span class="text-[11px] uppercase tracking-wider text-slate-400 block">JAPAN</span>
+                        <div class="flex items-baseline justify-between mt-1">
+                            <span class="text-lg font-bold">TADANO</span>
+                            <span class="text-xs font-semibold px-2 py-0.5 rounded bg-slate-100 text-slate-700">57</span>
+                        </div>
+                    </button>
+                    <button onclick="setManualBrand('DEMAG')" data-brand="DEMAG" class="manual-brand-btn bg-white hover:bg-slate-50 text-brand-navy p-4 rounded-xl border border-slate-200 text-left transition shadow-sm">
+                        <span class="text-[11px] uppercase tracking-wider text-slate-400 block">GERMANY</span>
+                        <div class="flex items-baseline justify-between mt-1">
+                            <span class="text-lg font-bold">DEMAG</span>
+                            <span class="text-xs font-semibold px-2 py-0.5 rounded bg-slate-100 text-slate-700">12</span>
+                        </div>
+                    </button>
+                    <button onclick="setManualBrand('LIEBHERR')" data-brand="LIEBHERR" class="manual-brand-btn bg-white hover:bg-slate-50 text-brand-navy p-4 rounded-xl border border-slate-200 text-left transition shadow-sm">
+                        <span class="text-[11px] uppercase tracking-wider text-slate-400 block">GERMANY</span>
+                        <div class="flex items-baseline justify-between mt-1">
+                            <span class="text-lg font-bold">LIEBHERR</span>
+                            <span class="text-xs font-semibold px-2 py-0.5 rounded bg-slate-100 text-slate-700">9</span>
+                        </div>
+                    </button>
+                    <button onclick="setManualBrand('KATO')" data-brand="KATO" class="manual-brand-btn bg-white hover:bg-slate-50 text-brand-navy p-4 rounded-xl border border-slate-200 text-left transition shadow-sm">
+                        <span class="text-[11px] uppercase tracking-wider text-slate-400 block">JAPAN</span>
+                        <div class="flex items-baseline justify-between mt-1">
+                            <span class="text-lg font-bold">KATO</span>
+                            <span class="text-xs font-semibold px-2 py-0.5 rounded bg-slate-100 text-slate-700">7</span>
+                        </div>
+                    </button>
+                    <button onclick="setManualBrand('OTHER')" data-brand="OTHER" class="manual-brand-btn bg-white hover:bg-slate-50 text-brand-navy p-4 rounded-xl border border-slate-200 text-left transition shadow-sm">
+                        <span class="text-[11px] uppercase tracking-wider text-slate-400 block">HEAVY CRAWLER</span>
+                        <div class="flex items-baseline justify-between mt-1">
+                            <span class="text-sm font-bold truncate">MANITOWOC / KOBELCO</span>
+                            <span class="text-xs font-semibold px-2 py-0.5 rounded bg-slate-100 text-slate-700 shrink-0">3</span>
+                        </div>
+                    </button>
+                </div>
+
+                <!-- Search & Multi-Filter Controls Box -->
+                <div class="bg-white rounded-2xl border border-slate-200 p-5 sm:p-6 shadow-sm space-y-4">
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
+                        <!-- Search Input -->
+                        <div class="md:col-span-5 relative">
+                            <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2"></i>
+                            <input type="text" id="manual-search-input" oninput="renderManuals()" placeholder="ค้นหาชื่อรุ่น หรือ ขนาดตัน (เช่น TR-250M, 25 ตัน, LTM1200)..." class="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-brand-navy">
+                        </div>
+
+                        <!-- Crane Type Select -->
+                        <div class="md:col-span-4">
+                            <select id="manual-type-select" onchange="renderManuals()" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-brand-navy bg-white text-slate-700">
+                                <option value="ALL">ทุกประเภทรถเครน (All Crane Types)</option>
+                                <option value="Rough Terrain">รถเครน 4 ล้อ Rough Terrain (TR / GR / KR)</option>
+                                <option value="Truck Crane">รถเครนบรรทุก Truck Crane (TL / TG / TS / OC / NK / TC)</option>
+                                <option value="All-Terrain">รถเครน All-Terrain (ATF / AR / LTM / AC / KA / LG)</option>
+                                <option value="Crawler Crane">รถเครนตีนตะขาบ Crawler Crane (CC / LR / CKE / Manitowoc)</option>
+                            </select>
+                        </div>
+
+                        <!-- View Mode & K-MOVE Fleet Toggle -->
+                        <div class="md:col-span-3 flex items-center justify-end gap-2">
+                            <button id="kmove-range-btn" onclick="toggleKmoveRange()" class="flex-1 md:flex-initial px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs font-medium text-slate-700 hover:bg-slate-50 transition flex items-center justify-center gap-1.5">
+                                <span class="w-2 h-2 rounded-full bg-brand-red"></span>
+                                <span>ขนาดเช่า K-MOVE (10-30T)</span>
+                            </button>
+                            <div class="inline-flex rounded-xl border border-slate-200 p-1 bg-slate-50 shrink-0">
+                                <button id="view-grid-btn" onclick="setManualViewMode('grid')" class="p-1.5 rounded-lg bg-brand-navy text-white transition" title="มุมมองการ์ด">
+                                    <i data-lucide="layout-grid" class="w-4 h-4"></i>
+                                </button>
+                                <button id="view-table-btn" onclick="setManualViewMode('table')" class="p-1.5 rounded-lg text-slate-500 hover:text-brand-navy transition" title="มุมมองตาราง">
+                                    <i data-lucide="list" class="w-4 h-4"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Filter Status Bar -->
+                    <div class="flex flex-wrap items-center justify-between gap-2 pt-3 border-t border-slate-100 text-xs text-slate-500">
+                        <div class="flex items-center gap-2">
+                            <span>แสดงผลลัพธ์: <strong id="manual-count-label" class="text-brand-navy">88</strong> จาก 88 ไฟล์ PDF</span>
+                            <span id="kmove-filter-badge" class="hidden px-2 py-0.5 rounded bg-red-50 text-brand-red font-semibold border border-red-200">
+                                เฉพาะขนาด 10–30 ตัน (20 รุ่น)
+                            </span>
+                        </div>
+                        <button onclick="resetManualFilters()" class="text-brand-red hover:underline font-medium flex items-center gap-1">
+                            <i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i>
+                            <span>ล้างตัวกรองทั้งหมด</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Manuals Grid Container -->
+                <div id="manuals-grid-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                    <!-- Populated dynamically via JS -->
+                </div>
+
+                <!-- Manuals Table Container -->
+                <div id="manuals-table-container" class="hidden bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse text-xs">
+                            <thead>
+                                <tr class="bg-brand-navy text-white">
+                                    <th class="p-3.5 font-semibold">ชื่อไฟล์คู่มือ (PDF)</th>
+                                    <th class="p-3.5 font-semibold">ยี่ห้อ (Brand)</th>
+                                    <th class="p-3.5 font-semibold">ประเภทรถเครน</th>
+                                    <th class="p-3.5 font-semibold">พิกัดยกสูงสุด</th>
+                                    <th class="p-3.5 font-semibold">ขนาดไฟล์</th>
+                                    <th class="p-3.5 font-semibold text-right">การดำเนินการ</th>
+                                </tr>
+                            </thead>
+                            <tbody id="manuals-table-body" class="divide-y divide-slate-200 text-slate-700">
+                                <!-- Populated dynamically via JS -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Helper Note Box -->
+                <div class="bg-slate-100 rounded-2xl p-6 border border-slate-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                    <div class="space-y-1">
+                        <h4 class="font-bold text-brand-navy text-sm flex items-center gap-2">
+                            <i data-lucide="info" class="w-4 h-4 text-brand-red"></i>
+                            <span>ต้องการคำแนะนำในการเทียบตาราง Load Chart กับหน้างานจริง?</span>
+                        </h4>
+                        <p class="text-xs text-slate-600 text-body">
+                            ทีมงานขายและบริการเทคนิคของ บริษัท เคมูฟว์ จำกัด พร้อมเข้าตรวจประเมินหน้างานและช่วยคำนวณเลือกขนาดเครน (10 - 30 ตัน) ที่เหมาะสมและปลอดภัยที่สุดสำหรับงานของท่าน
+                        </p>
+                    </div>
+                    <div class="flex gap-2 shrink-0">
+                        <button onclick="switchTab('loadchart')" class="px-4 py-2 rounded-lg bg-white border border-slate-300 text-xs font-semibold text-brand-navy hover:bg-slate-50 transition">
+                            วิธีอ่าน Load Chart
+                        </button>
+                        <button onclick="switchTab('contact')" class="px-4 py-2 rounded-lg bg-brand-navy text-xs font-semibold text-white hover:bg-slate-800 transition">
+                            ติดต่อทีมเทคนิค
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             TAB 6: บทความน่ารู้ (KNOWLEDGE ARTICLES)
+             ========================================== -->
+        <section id="tab-articles" class="tab-content">
+            <!-- Subpage Header -->
+            <div class="bg-brand-navy text-white py-12 border-b border-slate-800">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <span class="text-xs font-semibold uppercase tracking-widest text-brand-red">KNOWLEDGE & TECHNICAL ARTICLES</span>
+                    <h1 class="text-3xl font-bold mt-1">บทความน่ารู้ด้านความปลอดภัยและอุปกรณ์งานยก</h1>
+                    <p class="text-slate-300 text-sm mt-2">ความรู้ด้านกฎหมายปั้นจั่น การเลือกใช้ลวดสลิง สเก็น (Shackles) และสลิงอ่อน (Soft Sling) ตามมาตรฐานบริษัท เคมูฟว์ จำกัด</p>
+                </div>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-12">
+                <!-- Article Sub-Navigation Pills -->
+                <div class="flex flex-wrap gap-2 border-b border-slate-200 pb-4">
+                    <a href="#article-1" class="px-4 py-2 rounded-lg bg-white border border-slate-200 hover:border-brand-navy text-xs font-semibold text-brand-navy transition">1. กฎหมายการใช้รถเครน</a>
+                    <a href="#article-2" class="px-4 py-2 rounded-lg bg-white border border-slate-200 hover:border-brand-navy text-xs font-semibold text-brand-navy transition">2. การเลือกใช้ลวดสลิง (Wire Rope)</a>
+                    <a href="#article-3" class="px-4 py-2 rounded-lg bg-white border border-slate-200 hover:border-brand-navy text-xs font-semibold text-brand-navy transition">3. สเก็น (Shackles) & ตาราง W.L.L.</a>
+                    <a href="#article-4" class="px-4 py-2 rounded-lg bg-white border border-slate-200 hover:border-brand-navy text-xs font-semibold text-brand-navy transition">4. สลิงอ่อน (Soft Sling) & ตารางสีรับน้ำหนัก</a>
+                </div>
+
+                <!-- ARTICLE 1: Laws -->
+                <article id="article-1" class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-10 shadow-sm space-y-6">
+                    <div class="flex items-center gap-3">
+                        <span class="px-3 py-1 rounded-md bg-red-50 text-brand-red text-xs font-bold">บทความที่ 1</span>
+                        <span class="text-xs text-slate-400">มาตรฐานกฎหมายและวิศวกรรม</span>
+                    </div>
+                    <h2 class="text-2xl font-bold text-brand-navy">1. กฎหมายที่เกี่ยวข้องกับการอำนวยการใช้รถเครน</h2>
+                    <p class="text-slate-600 text-sm leading-relaxed text-body">
+                        ในการอำนวยการใช้และตรวจสอบปั้นจั่นชนิดเคลื่อนที่ (Mobile Crane) ควรพิจารณาและปฏิบัติตามกฎหมายซึ่งมีหลายฉบับที่บริษัทต้องดำเนินการเกี่ยวข้องกับกฎกระทรวงแรงงานและสวัสดิการสังคม ประกาศกรมสวัสดิการและคุ้มครองแรงงาน ข้อบังคับของสภาวิศวกร และในส่วนที่เกี่ยวกับกรมการขนส่งทางบก ซึ่งมีรายละเอียด 6 ฉบับสำคัญดังนี้:
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-body">
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 flex gap-3">
+                            <span class="font-bold text-brand-red font-sans">1.1</span>
+                            <span><strong>กฎกระทรวงแรงงานและสวัสดิการสังคม พ.ศ. 2552:</strong> เรื่องกำหนดมาตรฐานในการบริหารและการจัดการด้านความปลอดภัย อาชีวอนามัย และสภาพแวดล้อมในการทำงานเกี่ยวกับเครื่องจักร ปั้นจั่น และหม้อน้ำ</span>
+                        </div>
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 flex gap-3">
+                            <span class="font-bold text-brand-red font-sans">1.2</span>
+                            <span><strong>ประกาศกรมสวัสดิการและคุ้มครองแรงงาน พ.ศ. 2553:</strong> เรื่องการกำหนดรูปภาพการใช้สัญญาณมือในการสื่อสารระหว่างผู้ปฏิบัติงานเกี่ยวกับปั้นจั่น</span>
+                        </div>
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 flex gap-3">
+                            <span class="font-bold text-brand-red font-sans">1.3</span>
+                            <span><strong>ประกาศกรมสวัสดิการและคุ้มครองแรงงาน พ.ศ. 2553:</strong> เรื่องหลักเกณฑ์และวิธีการการใช้เชือกลวดสลิงและรอก</span>
+                        </div>
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 flex gap-3">
+                            <span class="font-bold text-brand-red font-sans">1.4</span>
+                            <span><strong>ประกาศกรมสวัสดิการและคุ้มครองแรงงาน พ.ศ. 2554:</strong> เรื่องหลักเกณฑ์และวิธีการทดสอบส่วนประกอบและอุปกรณ์ของปั้นจั่น</span>
+                        </div>
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 flex gap-3">
+                            <span class="font-bold text-brand-red font-sans">1.5</span>
+                            <span><strong>ประกาศกรมสวัสดิการและคุ้มครองแรงงาน พ.ศ. 2554:</strong> เรื่องหลักเกณฑ์และวิธีการอบรมหลักสูตรการปฏิบัติหน้าที่ผู้บังคับปั้นจั่น ผู้ให้สัญญาณแก่ผู้บังคับปั้นจั่น ผู้ยึดเกาะวัสดุ หรือผู้ควบคุมการใช้ปั้นจั่น และการอบรมทบทวนการทำงานเกี่ยวกับปั้นจั่น</span>
+                        </div>
+                        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 flex gap-3">
+                            <span class="font-bold text-brand-red font-sans">1.6</span>
+                            <span><strong>ข้อบังคับสภาวิศวกร พ.ศ. 2551:</strong> ว่าด้วยเรื่องหลักเกณฑ์และคุณสมบัติของผู้ประกอบวิชาชีพวิศวกรรมควบคุมแต่ละระดับ สาขาวิศวกรรมเครื่องกล</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ARTICLE 2: Wire Rope Sling -->
+                <article id="article-2" class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-10 shadow-sm space-y-6">
+                    <div class="flex items-center gap-3">
+                        <span class="px-3 py-1 rounded-md bg-red-50 text-brand-red text-xs font-bold">บทความที่ 2</span>
+                        <span class="text-xs text-slate-400">มาตรฐานลวดสลิงและอุปกรณ์ผูกมัด</span>
+                    </div>
+                    <h2 class="text-2xl font-bold text-brand-navy">2. การเลือกใช้ลวดสลิงและอุปกรณ์ผูกมัด (Wire Rope Sling)</h2>
+                    
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                        <div class="lg:col-span-7 space-y-4 text-slate-700 text-sm leading-relaxed text-body">
+                            <p>
+                                <strong>ลวดสลิง หรือเชือกลวดเหล็กกล้า (Wire rope sling)</strong> เป็นกลุ่มของลวดเหล็กกล้าที่มีการตีรอบแกนจนกลายเป็นเชือกลวด มีค่าความเค้นแรงดึงสูง (Tensile strength) ต้านทานต่อความล้า (Fatigue resistance) และต้านทานต่อการสึกหรอ (Wear resistance) ลวดสลิงประกอบด้วย 3 ส่วนหลัก ได้แก่:
+                            </p>
+                            <ul class="grid grid-cols-1 sm:grid-cols-3 gap-3 font-sans">
+                                <li class="p-3 rounded-lg bg-slate-50 border border-slate-200">
+                                    <strong class="text-brand-navy block">1. ลวดเหล็กกล้า (Wire)</strong>
+                                    <span class="text-xs text-slate-500">เส้นลวดเหล็กกล้ากำลังสูง</span>
+                                </li>
+                                <li class="p-3 rounded-lg bg-slate-50 border border-slate-200">
+                                    <strong class="text-brand-navy block">2. ลวดตีเกลียว (Strand)</strong>
+                                    <span class="text-xs text-slate-500">กลุ่มลวดที่ตีเกลียวรอบแกน</span>
+                                </li>
+                                <li class="p-3 rounded-lg bg-slate-50 border border-slate-200">
+                                    <strong class="text-brand-navy block">3. แกนลวดสลิง (Core)</strong>
+                                    <span class="text-xs text-slate-500">FC (ไส้เชือก) / IWRC (ไส้เหล็ก)</span>
+                                </li>
+                            </ul>
+                            <p>
+                                <strong>มาตรฐานของบริษัท เคมูฟว์ จำกัด:</strong> หากมีรถเครนที่ดีแต่ลวดสลิงไม่มีคุณภาพ การทำงานของรถเครนก็ไม่ปลอดภัย มีโอกาสเกิดอุบัติเหตุจากการยกสูง ดังนั้น <strong>บริษัท เคมูฟว์ จำกัด จึงเลือกใช้ลวดสลิงคุณภาพสูงชนิด Specification Rope 6x36WS Grade 1770 N/mm² ไส้เหล็ก IWRC (Independent Wire Rope Core)</strong> เพื่อป้องกันการเกิดอุบัติเหตุอันเนื่องมาจากลวดสลิงไม่ได้คุณภาพ
+                            </p>
+                            <p>
+                                <strong>การเลือกใช้ลวดสลิงสำหรับผูกมัด:</strong> กำหนดขนาดให้เหมาะสมกับรถเครนที่จะใช้งาน เช่น รถเครนขนาด 10 ตัน ใช้ลวดสลิงในเครน (Running rope) ขนาด 10 mm จะใช้ลวดสลิงผูกมัดขนาด 10 mm เช่นกัน โดยเป็นแบบ <strong>"SSE" Eye & Eye</strong> ความยาว 3 เมตร และ 6 เมตร
+                            </p>
+                        </div>
+
+                        <div class="lg:col-span-5 bg-slate-50 rounded-xl p-5 border border-slate-200 space-y-3">
+                            <h4 class="font-bold text-brand-navy text-sm">รูปแบบลวดสลิงที่ใช้งานผูกมัดมาตรฐาน 8 รูปแบบ:</h4>
+                            <div class="grid grid-cols-2 gap-2.5 text-xs">
+                                <div class="bg-white p-2.5 rounded border border-slate-200"><strong>"ESE"</strong> Endless Sling</div>
+                                <div class="bg-white p-2.5 rounded border border-red-200 bg-red-50/40"><strong>"SSE"</strong> Eye & Eye (เคมูฟว์ใช้เป็นหลัก)</div>
+                                <div class="bg-white p-2.5 rounded border border-slate-200"><strong>"TTE"</strong> Thimble & Thimble</div>
+                                <div class="bg-white p-2.5 rounded border border-slate-200"><strong>"STE"</strong> Eye & Thimble</div>
+                                <div class="bg-white p-2.5 rounded border border-slate-200"><strong>"SHE"</strong> Eye & Hook</div>
+                                <div class="bg-white p-2.5 rounded border border-slate-200"><strong>"THE"</strong> Thimble & Hook</div>
+                                <div class="bg-white p-2.5 rounded border border-slate-200"><strong>"MME"</strong> Master link & Master link</div>
+                                <div class="bg-white p-2.5 rounded border border-slate-200"><strong>"HHE"</strong> Hook & Hook</div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ARTICLE 3: Shackles -->
+                <article id="article-3" class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-10 shadow-sm space-y-6">
+                    <div class="flex items-center gap-3">
+                        <span class="px-3 py-1 rounded-md bg-red-50 text-brand-red text-xs font-bold">บทความที่ 3</span>
+                        <span class="text-xs text-slate-400">อุปกรณ์เชื่อมต่อและล็อก</span>
+                    </div>
+                    <h2 class="text-2xl font-bold text-brand-navy">3. สเก็น (Shackles) และการเลือกขนาดใช้งาน</h2>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-slate-700 text-body">
+                        <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 space-y-2">
+                            <h3 class="font-bold text-brand-navy text-base font-sans">1. สเก็นตัวยู / สเก็นชุบ (มาตรฐาน JIS ญี่ปุ่น)</h3>
+                            <p>มีลักษณะเป็นรูปตัวยู (U) ทั้งตัว โดยมีแกนล็อกที่มีขนาดเท่ากับไซส์ของสเก็นนั้นๆ นิยมใช้ทั่วไป สามารถเลือกใช้งานได้หลากหลายตามวัตถุประสงค์</p>
+                        </div>
+                        <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 space-y-2">
+                            <h3 class="font-bold text-brand-navy text-base font-sans">2. สเก็นโอเมก้า (มาตรฐาน US)</h3>
+                            <p>มีลักษณะคล้ายเครื่องหมายโอเมก้า (Ω) มีแกนล็อกเกลียว (Screw Pin) สามารถรับน้ำหนักได้สูง เหมาะกับงานก่อสร้าง รถเครน รถบรรทุก และงานยกหนัก</p>
+                        </div>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-amber-50/70 border border-amber-200 text-xs text-slate-700">
+                        <strong class="text-brand-navy">หลักเกณฑ์สำคัญในการตรวจสอบและเลือกขนาดสเก็น:</strong> ห้ามเลือกสเก็นที่มีขนาดแกนต่ำกว่าขนาดของอุปกรณ์ที่จะต่อพ่วงเด็ดขาด โดยตามความเหมาะสมที่สุดควรเลือกใช้ขนาดไดมิเตอร์ที่เท่ากันหรือใหญ่กว่า เช่น <strong>ลวดสลิง 16 mm. จะนำมาใช้งานกับสเก็น 16 mm. หรือขนาดใหญ่กว่า</strong>
+                    </div>
+
+                    <!-- Shackle Technical Table (ASP-364 G209) -->
+                    <div>
+                        <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+                            <h4 class="font-bold text-brand-navy text-sm">ตารางสเปคสเก็นโอเมก้า: ASP-364 G209 ANCHOR SHACKLE WITH SCREW PIN</h4>
+                            <span class="text-xs text-slate-500">Material: Forged carbon steel with alloy pin | Proof Load: 2x WLL | Safety Factor: 4:1</span>
+                        </div>
+                        <div class="overflow-x-auto border border-slate-200 rounded-xl max-h-96">
+                            <table class="w-full text-left border-collapse text-xs">
+                                <thead class="sticky top-0 bg-brand-navy text-white">
+                                    <tr>
+                                        <th class="p-2.5">Art No.</th>
+                                        <th class="p-2.5">Size (inch)</th>
+                                        <th class="p-2.5 bg-red-700">W.L.L. (ตัน)</th>
+                                        <th class="p-2.5">M.B.S. (ตัน)</th>
+                                        <th class="p-2.5">D (mm)</th>
+                                        <th class="p-2.5">Pin B (mm)</th>
+                                        <th class="p-2.5">A (mm)</th>
+                                        <th class="p-2.5">C (mm)</th>
+                                        <th class="p-2.5">L (mm)</th>
+                                        <th class="p-2.5">Weight (kg)</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-slate-200 text-slate-700">
+                                    <tr><td class="p-2.5">ASP-364-05</td><td class="p-2.5">3/16"</td><td class="p-2.5 font-bold text-brand-navy">0.33</td><td class="p-2.5">1.32</td><td class="p-2.5">6</td><td class="p-2.5">5</td><td class="p-2.5">10</td><td class="p-2.5">15</td><td class="p-2.5">37</td><td class="p-2.5">0.03</td></tr>
+                                    <tr class="bg-slate-50"><td class="p-2.5">ASP-364-06</td><td class="p-2.5">1/4"</td><td class="p-2.5 font-bold text-brand-navy">0.50</td><td class="p-2.5">2.00</td><td class="p-2.5">8</td><td class="p-2.5">6</td><td class="p-2.5">12</td><td class="p-2.5">20</td><td class="p-2.5">47</td><td class="p-2.5">0.05</td></tr>
+                                    <tr><td class="p-2.5">ASP-364-08</td><td class="p-2.5">5/16"</td><td class="p-2.5 font-bold text-brand-navy">0.75</td><td class="p-2.5">3.00</td><td class="p-2.5">9</td><td class="p-2.5">8</td><td class="p-2.5">13</td><td class="p-2.5">21</td><td class="p-2.5">54</td><td class="p-2.5">0.10</td></tr>
+                                    <tr class="bg-slate-50"><td class="p-2.5">ASP-364-10</td><td class="p-2.5">3/8"</td><td class="p-2.5 font-bold text-brand-navy">1.00</td><td class="p-2.5">4.00</td><td class="p-2.5">11</td><td class="p-2.5">10</td><td class="p-2.5">16</td><td class="p-2.5">26</td><td class="p-2.5">65</td><td class="p-2.5">0.14</td></tr>
+                                    <tr><td class="p-2.5">ASP-364-11</td><td class="p-2.5">7/16"</td><td class="p-2.5 font-bold text-brand-navy">1.50</td><td class="p-2.5">6.00</td><td class="p-2.5">13</td><td class="p-2.5">11</td><td class="p-2.5">19</td><td class="p-2.5">30</td><td class="p-2.5">75</td><td class="p-2.5">0.20</td></tr>
+                                    <tr class="bg-slate-50"><td class="p-2.5">ASP-364-13</td><td class="p-2.5">1/2"</td><td class="p-2.5 font-bold text-brand-navy">2.00</td><td class="p-2.5">8.00</td><td class="p-2.5">16</td><td class="p-2.5">13</td><td class="p-2.5">20</td><td class="p-2.5">33</td><td class="p-2.5">85</td><td class="p-2.5">0.30</td></tr>
+                                    <tr><td class="p-2.5">ASP-364-16</td><td class="p-2.5">5/8"</td><td class="p-2.5 font-bold text-brand-navy">3.25</td><td class="p-2.5">13.00</td><td class="p-2.5">19</td><td class="p-2.5">16</td><td class="p-2.5">27</td><td class="p-2.5">43</td><td class="p-2.5">106</td><td class="p-2.5">0.60</td></tr>
+                                    <tr class="bg-slate-50"><td class="p-2.5">ASP-364-19</td><td class="p-2.5">3/4"</td><td class="p-2.5 font-bold text-brand-navy">4.75</td><td class="p-2.5">19.00</td><td class="p-2.5">22</td><td class="p-2.5">19</td><td class="p-2.5">33</td><td class="p-2.5">50</td><td class="p-2.5">126</td><td class="p-2.5">1.10</td></tr>
+                                    <tr><td class="p-2.5">ASP-364-22</td><td class="p-2.5">7/8"</td><td class="p-2.5 font-bold text-brand-navy">6.50</td><td class="p-2.5">26.00</td><td class="p-2.5">26</td><td class="p-2.5">22</td><td class="p-2.5">38</td><td class="p-2.5">58</td><td class="p-2.5">148</td><td class="p-2.5">1.60</td></tr>
+                                    <tr class="bg-slate-50"><td class="p-2.5">ASP-364-26</td><td class="p-2.5">1"</td><td class="p-2.5 font-bold text-brand-navy">8.50</td><td class="p-2.5">34.00</td><td class="p-2.5">28</td><td class="p-2.5">26</td><td class="p-2.5">44</td><td class="p-2.5">69</td><td class="p-2.5">166</td><td class="p-2.5">2.30</td></tr>
+                                    <tr><td class="p-2.5">ASP-364-28</td><td class="p-2.5">1-1/8"</td><td class="p-2.5 font-bold text-brand-navy">9.50</td><td class="p-2.5">38.00</td><td class="p-2.5">32</td><td class="p-2.5">28</td><td class="p-2.5">46</td><td class="p-2.5">74</td><td class="p-2.5">190</td><td class="p-2.5">3.20</td></tr>
+                                    <tr class="bg-slate-50"><td class="p-2.5">ASP-364-32</td><td class="p-2.5">1-1/4"</td><td class="p-2.5 font-bold text-brand-navy">12.00</td><td class="p-2.5">48.00</td><td class="p-2.5">36</td><td class="p-2.5">32</td><td class="p-2.5">54</td><td class="p-2.5">84</td><td class="p-2.5">210</td><td class="p-2.5">4.50</td></tr>
+                                    <tr><td class="p-2.5">ASP-364-36</td><td class="p-2.5">1-3/8"</td><td class="p-2.5 font-bold text-brand-navy">13.50</td><td class="p-2.5">54.00</td><td class="p-2.5">38</td><td class="p-2.5">36</td><td class="p-2.5">59</td><td class="p-2.5">92</td><td class="p-2.5">232</td><td class="p-2.5">6.30</td></tr>
+                                    <tr class="bg-slate-50"><td class="p-2.5">ASP-364-38</td><td class="p-2.5">1-1/2"</td><td class="p-2.5 font-bold text-brand-navy">17.00</td><td class="p-2.5">68.00</td><td class="p-2.5">42</td><td class="p-2.5">38</td><td class="p-2.5">60</td><td class="p-2.5">99</td><td class="p-2.5">254</td><td class="p-2.5">7.90</td></tr>
+                                    <tr><td class="p-2.5">ASP-364-45</td><td class="p-2.5">1-3/4"</td><td class="p-2.5 font-bold text-brand-navy">25.00</td><td class="p-2.5">100.00</td><td class="p-2.5">51</td><td class="p-2.5">47</td><td class="p-2.5">73</td><td class="p-2.5">127</td><td class="p-2.5">313</td><td class="p-2.5">16.40</td></tr>
+                                    <tr class="bg-slate-50"><td class="p-2.5">ASP-364-50</td><td class="p-2.5">2"</td><td class="p-2.5 font-bold text-brand-navy">35.00</td><td class="p-2.5">140.00</td><td class="p-2.5">58</td><td class="p-2.5">53</td><td class="p-2.5">83</td><td class="p-2.5">146</td><td class="p-2.5">347</td><td class="p-2.5">21.00</td></tr>
+                                    <tr><td class="p-2.5">ASP-364-64</td><td class="p-2.5">2-1/2"</td><td class="p-2.5 font-bold text-brand-navy">55.00</td><td class="p-2.5">220.00</td><td class="p-2.5">70</td><td class="p-2.5">79</td><td class="p-2.5">105</td><td class="p-2.5">184</td><td class="p-2.5">453</td><td class="p-2.5">39.00</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ARTICLE 4: Soft Sling / Webbing Sling -->
+                <article id="article-4" class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-10 shadow-sm space-y-6">
+                    <div class="flex items-center gap-3">
+                        <span class="px-3 py-1 rounded-md bg-red-50 text-brand-red text-xs font-bold">บทความที่ 4</span>
+                        <span class="text-xs text-slate-400">สลิงผ้าใบและเส้นใยโพลีเอสเตอร์</span>
+                    </div>
+                    <h2 class="text-2xl font-bold text-brand-navy">4. สลิงอ่อน (Soft Sling / Webbing Sling) และตารางการรับน้ำหนักตามสี</h2>
+                    <p class="text-slate-600 text-sm leading-relaxed text-body">
+                        <strong>สลิงอ่อน (Soft Sling)</strong> หรือสลิงผ้า ผ้าใบยกของ สลิงโพลีเอสเตอร์ ผลิตจากเส้นใยโพลีเอสเตอร์ (Polyester 100%) มีความเหนียว แข็งแรง รับแรงดึงได้สูง ทนกรด-ด่าง ไม่เกิดสนิม น้ำหนักเบา และ<strong>ไม่ทำให้ชิ้นงานที่ยกเกิดรอยขีดข่วน บุบ หรือแตกหัก</strong> มี 2 ชนิด คือ <strong>สลิงแบน (Webbing Sling)</strong> และ <strong>สลิงกลม (Round Sling)</strong> โดยพนักงานช่างจะตรวจสอบสภาพการฉีกขาดหรือการยุ่ยของเนื้อผ้าด้วยสายตาก่อนใช้งานทุกครั้ง หากพบชำรุดจะหยุดใช้งานทันที
+                    </p>
+
+                    <!-- Technical Data Color Table -->
+                    <div>
+                        <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+                            <h4 class="font-bold text-brand-navy text-sm">ตาราง Technical Data แสดงการรับน้ำหนักของสลิงอ่อนชนิดแบน (DUPLEX Webbing Sling - หน่วย: กิโลกรัม)</h4>
+                            <span class="text-xs text-slate-500">Safety Factor: SF 7:1 / SF 6:1</span>
+                        </div>
+                        <div class="overflow-x-auto border border-slate-200 rounded-xl">
+                            <table class="w-full text-left border-collapse text-xs">
+                                <thead>
+                                    <tr class="bg-brand-navy text-white">
+                                        <th class="p-3">รหัสสี (Colour)</th>
+                                        <th class="p-3">W.L.L. ยกตรง<br><span class="text-[10px] text-slate-300">Straight Lift (M=1)</span></th>
+                                        <th class="p-3">S.W.L. รัดรอบ<br><span class="text-[10px] text-slate-300">Choked Lift (M=0.8)</span></th>
+                                        <th class="p-3">S.W.L. ทบคู่ 45°<br><span class="text-[10px] text-slate-300">45° Lift (M=1.8)</span></th>
+                                        <th class="p-3">S.W.L. ทบคู่ 90°<br><span class="text-[10px] text-slate-300">90° Lift (M=1.4)</span></th>
+                                        <th class="p-3">หน้ากว้าง<br><span class="text-[10px] text-slate-300">Width (mm)</span></th>
+                                        <th class="p-3">ความยาวห่วง<br><span class="text-[10px] text-slate-300">Eye Length (mm)</span></th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-slate-200 text-slate-700 font-medium">
+                                    <tr>
+                                        <td class="p-3 flex items-center gap-2"><span class="w-4 h-4 rounded bg-purple-600 inline-block"></span> Violet (ม่วง)</td>
+                                        <td class="p-3 font-bold">1,000 kg</td>
+                                        <td class="p-3">800 kg</td>
+                                        <td class="p-3">1,800 kg</td>
+                                        <td class="p-3">1,400 kg</td>
+                                        <td class="p-3">25, 30</td>
+                                        <td class="p-3">300</td>
+                                    </tr>
+                                    <tr class="bg-slate-50">
+                                        <td class="p-3 flex items-center gap-2"><span class="w-4 h-4 rounded bg-green-600 inline-block"></span> Green (เขียว)</td>
+                                        <td class="p-3 font-bold">2,000 kg</td>
+                                        <td class="p-3">1,600 kg</td>
+                                        <td class="p-3">3,600 kg</td>
+                                        <td class="p-3">2,800 kg</td>
+                                        <td class="p-3">50, 60</td>
+                                        <td class="p-3">300</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-3 flex items-center gap-2"><span class="w-4 h-4 rounded bg-yellow-400 border border-slate-300 inline-block"></span> Yellow (เหลือง)</td>
+                                        <td class="p-3 font-bold">3,000 kg</td>
+                                        <td class="p-3">2,400 kg</td>
+                                        <td class="p-3">5,400 kg</td>
+                                        <td class="p-3">4,200 kg</td>
+                                        <td class="p-3">75, 90</td>
+                                        <td class="p-3">400</td>
+                                    </tr>
+                                    <tr class="bg-slate-50">
+                                        <td class="p-3 flex items-center gap-2"><span class="w-4 h-4 rounded bg-slate-500 inline-block"></span> Grey (เทา)</td>
+                                        <td class="p-3 font-bold">4,000 kg</td>
+                                        <td class="p-3">3,200 kg</td>
+                                        <td class="p-3">7,200 kg</td>
+                                        <td class="p-3">5,600 kg</td>
+                                        <td class="p-3">100, 120</td>
+                                        <td class="p-3">400</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-3 flex items-center gap-2"><span class="w-4 h-4 rounded bg-red-600 inline-block"></span> Red (แดง)</td>
+                                        <td class="p-3 font-bold">5,000 kg</td>
+                                        <td class="p-3">4,000 kg</td>
+                                        <td class="p-3">9,000 kg</td>
+                                        <td class="p-3">7,000 kg</td>
+                                        <td class="p-3">125, 150</td>
+                                        <td class="p-3">450</td>
+                                    </tr>
+                                    <tr class="bg-slate-50">
+                                        <td class="p-3 flex items-center gap-2"><span class="w-4 h-4 rounded bg-amber-800 inline-block"></span> Brown (น้ำตาล)</td>
+                                        <td class="p-3 font-bold">6,000 kg</td>
+                                        <td class="p-3">4,800 kg</td>
+                                        <td class="p-3">10,800 kg</td>
+                                        <td class="p-3">8,400 kg</td>
+                                        <td class="p-3">150, 180</td>
+                                        <td class="p-3">600</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-3 flex items-center gap-2"><span class="w-4 h-4 rounded bg-blue-600 inline-block"></span> Blue (น้ำเงิน)</td>
+                                        <td class="p-3 font-bold">8,000 kg</td>
+                                        <td class="p-3">6,400 kg</td>
+                                        <td class="p-3">14,400 kg</td>
+                                        <td class="p-3">11,200 kg</td>
+                                        <td class="p-3">200, 240</td>
+                                        <td class="p-3">600</td>
+                                    </tr>
+                                    <tr class="bg-slate-50">
+                                        <td class="p-3 flex items-center gap-2"><span class="w-4 h-4 rounded bg-orange-500 inline-block"></span> Orange (ส้ม - 10T)</td>
+                                        <td class="p-3 font-bold">10,000 kg</td>
+                                        <td class="p-3">8,000 kg</td>
+                                        <td class="p-3">18,000 kg</td>
+                                        <td class="p-3">14,000 kg</td>
+                                        <td class="p-3">250, 300</td>
+                                        <td class="p-3">900</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-3 flex items-center gap-2"><span class="w-4 h-4 rounded bg-orange-600 inline-block"></span> Orange (ส้ม - 12T)</td>
+                                        <td class="p-3 font-bold">12,000 kg</td>
+                                        <td class="p-3">9,600 kg</td>
+                                        <td class="p-3">21,600 kg</td>
+                                        <td class="p-3">16,800 kg</td>
+                                        <td class="p-3">300, 360</td>
+                                        <td class="p-3">900</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             TAB 6: ติดต่อเรา (CONTACT US)
+             ========================================== -->
+        <section id="tab-contact" class="tab-content">
+            <!-- Subpage Header -->
+            <div class="bg-brand-navy text-white py-12 border-b border-slate-800">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <span class="text-xs font-semibold uppercase tracking-widest text-brand-red">CONTACT K-MOVE CO., LTD.</span>
+                    <h1 class="text-3xl font-bold mt-1">ช่องทางการติดต่อเรา</h1>
+                    <p class="text-slate-300 text-sm mt-2">ติดต่อสอบถามราคาเช่ารถเครน เช่าตู้สำนักงาน หรือนัดหมายทีมงานเข้าประเมินหน้างานในจังหวัดเชียงใหม่และพื้นที่ใกล้เคียง</p>
+                </div>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+                    <!-- Left: Contact Details & QR Code -->
+                    <div class="lg:col-span-6 space-y-6">
+                        <div class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm space-y-6">
+                            <div>
+                                <span class="text-xs font-semibold uppercase tracking-widest text-brand-red">HEAD OFFICE</span>
+                                <h2 class="text-2xl font-bold text-brand-navy mt-1">บริษัท เคมูฟว์ จำกัด</h2>
+                                <p class="text-slate-600 text-sm mt-1 text-body">เลขที่ 48 ตำบลฟ้าฮ่าม อำเภอเมือง จังหวัดเชียงใหม่ 50000 (ในเครือพิบูลย์คอนกรีต)</p>
+                            </div>
+
+                            <div class="space-y-4 pt-2">
+                                <!-- Office Phone -->
+                                <div class="flex items-start gap-4 p-4 rounded-xl bg-slate-50 border border-slate-200">
+                                    <div class="w-10 h-10 rounded-lg bg-brand-navy text-white flex items-center justify-center shrink-0">
+                                        <i data-lucide="phone" class="w-5 h-5 text-brand-red"></i>
+                                    </div>
+                                    <div>
+                                        <span class="text-xs text-slate-500 block">1. เบอร์โทรศัพท์สำนักงาน</span>
+                                        <div class="flex flex-wrap gap-x-4 gap-y-1 mt-0.5">
+                                            <a href="tel:053240500" class="text-lg font-bold text-brand-navy hover:text-brand-red transition">053-240500</a>
+                                            <span class="text-slate-300">|</span>
+                                            <a href="tel:053853494" class="text-lg font-bold text-brand-navy hover:text-brand-red transition">053-853494</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Sales Phone -->
+                                <div class="flex items-start gap-4 p-4 rounded-xl bg-slate-50 border border-slate-200">
+                                    <div class="w-10 h-10 rounded-lg bg-brand-navy text-white flex items-center justify-center shrink-0">
+                                        <i data-lucide="headset" class="w-5 h-5 text-brand-red"></i>
+                                    </div>
+                                    <div>
+                                        <span class="text-xs text-slate-500 block">2. เบอร์ติดต่อฝ่ายขายและประเมินหน้างาน (Sales)</span>
+                                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1 mt-1">
+                                            <a href="tel:0851555331" class="text-base font-bold text-brand-red hover:underline">Sale 1: 085-1555331</a>
+                                            <a href="tel:0851115626" class="text-base font-bold text-brand-red hover:underline">Sale 2: 085-1115626</a>
+                                            <a href="tel:0896666274" class="text-sm font-semibold text-slate-700 hover:underline sm:col-span-2 mt-0.5">สายด่วนเพิ่มเติม: 089-6666274</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Line ID & Website -->
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 flex items-center gap-3.5">
+                                        <div class="w-10 h-10 rounded-lg bg-green-600 text-white flex items-center justify-center shrink-0 font-bold text-xs">
+                                            LINE
+                                        </div>
+                                        <div>
+                                            <span class="text-xs text-slate-500 block">3. Line ID</span>
+                                            <span class="text-base font-bold text-brand-navy">085-1115626</span>
+                                        </div>
+                                    </div>
+                                    <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 flex items-center gap-3.5">
+                                        <div class="w-10 h-10 rounded-lg bg-slate-200 text-brand-navy flex items-center justify-center shrink-0">
+                                            <i data-lucide="globe" class="w-5 h-5"></i>
+                                        </div>
+                                        <div>
+                                            <span class="text-xs text-slate-500 block">เว็บไซต์เครือข่าย</span>
+                                            <span class="text-sm font-bold text-brand-navy">www.pcc-concrete.co.th</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 4. Map & QR Code Section -->
+                            <div class="pt-4 border-t border-slate-200">
+                                <h3 class="font-bold text-brand-navy text-sm mb-3">4. แผนที่ตั้งบริษัท และ QR Code นำทาง / แอดไลน์</h3>
+                                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 items-center bg-slate-50 p-4 rounded-xl border border-slate-200">
+                                    <div class="flex flex-col items-center justify-center bg-white p-3 rounded-lg border border-slate-200">
+                                        <!-- Clean SVG QR Code for Google Maps Location -->
+                                        <svg class="w-28 h-28 text-brand-navy" viewBox="0 0 100 100" fill="currentColor">
+                                            <path d="M10 10h25v25H10zM15 15v15h15V15zM20 20h5v5h-5zM65 10h25v25H65zM70 15v15h15V15zM75 20h5v5h-5zM10 65h25v25H10zM15 70v15h15V70zM20 75h5v5h-5zM45 10h5v10h-5zM55 15h5v15h-5zM40 25h10v5H40zM10 40h15v5H10zM30 40h20v5H30zM55 40h10v10H55zM75 40h15v5H75zM15 50h10v10H15zM35 50h15v5H35zM45 60h20v5H45zM70 55h10v15H70zM85 50h5v20h-5zM40 70h10v10H40zM55 75h15v5H55zM40 85h25v5H40zM75 75h15v15H75zM80 80v5h5v-5z"/>
+                                        </svg>
+                                        <span class="text-[11px] font-medium text-slate-600 mt-1">สแกน QR แผนที่ตั้ง</span>
+                                    </div>
+                                    <div class="sm:col-span-2 space-y-2 text-xs text-slate-600 text-body">
+                                        <p class="font-semibold text-brand-navy text-sm font-sans">บริษัท เคมูฟว์ จำกัด (ต.ฟ้าฮ่าม อ.เมืองเชียงใหม่)</p>
+                                        <p>ตั้งอยู่เลขที่ 48 ตำบลฟ้าฮ่าม อำเภอเมือง จังหวัดเชียงใหม่ เดินทางสะดวกติดถนนสายหลัก พร้อมลานจอดรถเครนและศูนย์ซ่อมบำรุงครบวงจร</p>
+                                        <a href="https://maps.google.com/?q=ตำบลฟ้าฮ่าม+อำเภอเมืองเชียงใหม่+เชียงใหม่" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-brand-red font-semibold hover:underline pt-1 font-sans">
+                                            <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                                            <span>เปิดดูตำแหน่งบน Google Maps</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Interactive Inquiry & Quote Request Form -->
+                    <div class="lg:col-span-6">
+                        <div class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-sm">
+                            <span class="text-xs font-semibold uppercase tracking-widest text-brand-red">REQUEST A QUOTATION</span>
+                            <h2 class="text-2xl font-bold text-brand-navy mt-1">ส่งข้อมูลติดต่อ / ขอประเมินหน้างาน</h2>
+                            <p class="text-slate-600 text-sm mt-1 mb-6 text-body">กรอกรายละเอียดงานของท่านเพื่อให้ทีมงานขายและเทคนิคติดต่อกลับโดยเร็วที่สุด</p>
+
+                            <form id="contact-form" onsubmit="handleContactSubmit(event)" class="space-y-4">
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-xs font-medium text-slate-700 mb-1">ชื่อผู้ติดต่อ / บริษัท *</label>
+                                        <input type="text" required placeholder="ระบุชื่อหรือบริษัทของท่าน" class="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 text-sm focus:outline-none focus:border-brand-navy">
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-medium text-slate-700 mb-1">เบอร์โทรศัพท์ติดต่อกลับ *</label>
+                                        <input type="tel" required placeholder="เช่น 08X-XXX-XXXX" class="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 text-sm focus:outline-none focus:border-brand-navy">
+                                    </div>
+                                </div>
+
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-xs font-medium text-slate-700 mb-1">บริการที่ต้องการ</label>
+                                        <select class="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 text-sm focus:outline-none focus:border-brand-navy bg-white">
+                                            <option>เช่ารถเครน 10 ตัน</option>
+                                            <option>เช่ารถเครน 16 ตัน</option>
+                                            <option>เช่ารถเครน 20 ตัน</option>
+                                            <option>เช่ารถเครน 25 ตัน</option>
+                                            <option>เช่ารถเครน 30 ตัน</option>
+                                            <option>เช่าตู้คอนเทนเนอร์สำนักงาน (3x6 ม.)</option>
+                                            <option>ให้ทีมเทคนิคเข้าประเมินหน้างานเพื่อเลือกขนาดเครน</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-medium text-slate-700 mb-1">รูปแบบการเช่า</label>
+                                        <select class="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 text-sm focus:outline-none focus:border-brand-navy bg-white">
+                                            <option>เช่ารายวัน</option>
+                                            <option>เช่ารายเดือน</option>
+                                            <option>ยังไม่แน่ใจ (ต้องการคำปรึกษา)</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label class="block text-xs font-medium text-slate-700 mb-1">สถานที่ตั้งหน้างาน (อำเภอ/จังหวัด) และรายละเอียดงานยก</label>
+                                    <textarea rows="4" placeholder="ระบุลักษณะชิ้นงานที่จะยก น้ำหนักโดยประมาณ ความสูง หรือสถานที่ตั้งโครงการ..." class="w-full px-3.5 py-2.5 rounded-lg border border-slate-300 text-sm focus:outline-none focus:border-brand-navy"></textarea>
+                                </div>
+
+                                <button type="submit" class="w-full bg-brand-red hover:bg-brand-redDark text-white font-medium py-3 rounded-lg transition shadow-sm flex items-center justify-center gap-2">
+                                    <i data-lucide="send" class="w-4 h-4"></i>
+                                    <span>ส่งข้อมูลให้ฝ่ายขายติดต่อกลับ</span>
+                                </button>
+                            </form>
+
+                            <!-- Success Notification Message Box -->
+                            <div id="form-success-msg" class="hidden mt-4 p-4 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-900 text-xs flex items-start gap-3">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-600 shrink-0"></i>
+                                <div>
+                                    <strong class="block font-semibold">บันทึกข้อความเรียบร้อยแล้ว</strong>
+                                    <span>ขอบคุณที่ให้ความไว้วางใจ บริษัท เคมูฟว์ จำกัด หากต้องการติดต่อด่วนสามารถโทรได้ที่ฝ่ายขาย 085-1555331 หรือ 085-1115626</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- CORPORATE FOOTER (PCC Group Inspired Clean Dark Footer) -->
+    <footer class="bg-brand-navy text-slate-400 border-t border-slate-800 mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Col 1 -->
+                <div class="space-y-3">
+                    <div class="flex items-center gap-2.5">
+                        <div class="w-9 h-9 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center text-white font-bold">
+                            <span class="text-brand-red italic font-extrabold">K</span>
+                        </div>
+                        <span class="text-lg font-bold text-white">บริษัท เคมูฟว์ จำกัด</span>
+                    </div>
+                    <p class="text-xs leading-relaxed text-slate-400 text-body">
+                        ผู้ให้บริการเช่ารถเครนเคลื่อนที่ ขนาด 10 – 30 ตัน และตู้คอนเทนเนอร์สำนักงานเคลื่อนที่ ในจังหวัดเชียงใหม่และจังหวัดใกล้เคียง ในเครือพิบูลย์คอนกรีต
+                    </p>
+                </div>
+
+                <!-- Col 2 -->
+                <div>
+                    <h4 class="text-white font-semibold text-sm mb-3">เมนูหลัก</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><button onclick="switchTab('home')" class="hover:text-white transition">หน้าแรก</button></li>
+                        <li><button onclick="switchTab('about')" class="hover:text-white transition">เกี่ยวกับเรา & โครงสร้างบริหาร</button></li>
+                        <li><button onclick="switchTab('services')" class="hover:text-white transition">สินค้าและบริการ (รถเครน 10-30 ตัน)</button></li>
+                        <li><button onclick="switchTab('loadchart')" class="hover:text-white transition">การอ่าน Load Chart & การเลือกเครน</button></li>
+                        <li><button onclick="switchTab('manuals')" class="hover:text-white transition">คลังคู่มือรถเครน (88 ไฟล์ PDF)</button></li>
+                        <li><button onclick="switchTab('articles')" class="hover:text-white transition">บทความน่ารู้ (กฎหมาย/สลิง/สเก็น)</button></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3 -->
+                <div>
+                    <h4 class="text-white font-semibold text-sm mb-3">บริการของเรา</h4>
+                    <ul class="space-y-2 text-xs text-slate-400">
+                        <li>• รถเครนให้เช่ารายวัน / รายเดือน (24 คัน)</li>
+                        <li>• ขนาดเครน 10, 16, 20, 25 และ 30 ตัน</li>
+                        <li>• ตู้คอนเทนเนอร์สำนักงาน 3 x 6 เมตร</li>
+                        <li>• ทีมงานประเมินหน้างานและวางแผนการยก</li>
+                        <li>• หน่วยซ่อมฉุกเฉินเคลื่อนที่ (Mobile Service)</li>
+                    </ul>
+                </div>
+
+                <!-- Col 4 -->
+                <div>
+                    <h4 class="text-white font-semibold text-sm mb-3">ติดต่อเรา</h4>
+                    <ul class="space-y-2 text-xs text-slate-300">
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="map-pin" class="w-4 h-4 text-brand-red shrink-0 mt-0.5"></i>
+                            <span>เลขที่ 48 ตำบลฟ้าฮ่าม อำเภอเมือง จังหวัดเชียงใหม่ 50000</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="phone" class="w-4 h-4 text-brand-red shrink-0"></i>
+                            <span>สำนักงาน: 053-240500, 053-853494</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="phone-call" class="w-4 h-4 text-brand-red shrink-0"></i>
+                            <span>ฝ่ายขาย: 085-1555331, 085-1115626</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="message-square" class="w-4 h-4 text-brand-red shrink-0"></i>
+                            <span>Line ID: 085-1115626</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-800 mt-10 pt-6 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-500 gap-4">
+                <p>© บริษัท เคมูฟว์ จำกัด (K-MOVE CO., LTD.) - กลุ่มบริษัทในเครือพิบูลย์คอนกรีต. สงวนลิขสิทธิ์.</p>
+                <p>มาตรฐานความปลอดภัย อาชีวอนามัย และวิศวกรรมปั้นจั่น</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- PDF PREVIEW MODAL -->
+    <div id="pdf-preview-modal" class="fixed inset-0 z-50 hidden bg-slate-900/80 backdrop-blur-sm flex items-center justify-center p-3 sm:p-6">
+        <div class="bg-white rounded-2xl border border-slate-200 shadow-2xl w-full max-w-5xl h-[88vh] flex flex-col overflow-hidden">
+            <!-- Modal Header -->
+            <div class="bg-brand-navy text-white px-5 py-3.5 flex items-center justify-between gap-4">
+                <div class="flex items-center gap-3 min-w-0">
+                    <div class="w-8 h-8 rounded-lg bg-brand-red/20 border border-brand-red/40 flex items-center justify-center text-brand-red shrink-0">
+                        <i data-lucide="file-text" class="w-4 h-4"></i>
+                    </div>
+                    <div class="min-w-0">
+                        <h3 id="modal-pdf-title" class="font-bold text-sm sm:text-base truncate">Tadano TR-250M-5.pdf</h3>
+                        <p id="modal-pdf-subtitle" class="text-xs text-slate-300 truncate">TADANO • Rough Terrain • พิกัดยก 25 ตัน</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-2 shrink-0">
+                    <a id="modal-pdf-external" href="#" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-brand-red hover:bg-brand-redDark text-white text-xs font-medium transition flex items-center gap-1.5">
+                        <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                        <span class="hidden sm:inline">เปิดใน Google Drive / ดาวน์โหลด</span>
+                        <span class="sm:hidden">เปิดไฟล์</span>
+                    </a>
+                    <button onclick="closePdfModal()" class="p-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white transition" title="ปิดหน้าต่าง">
+                        <i data-lucide="x" class="w-5 h-5"></i>
+                    </button>
+                </div>
+            </div>
+            <!-- Modal Body (Iframe) -->
+            <div class="flex-grow bg-slate-100 relative">
+                <iframe id="modal-pdf-iframe" src="about:blank" class="w-full h-full border-0" allow="autoplay"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
